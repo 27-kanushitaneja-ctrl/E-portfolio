@@ -1,7 +1,8 @@
 import streamlit as st
+import textwrap
 
 # =========================================================
-# PAGE CONFIG
+# PAGE SETUP
 # =========================================================
 
 st.set_page_config(
@@ -16,33 +17,39 @@ st.set_page_config(
 # =========================================================
 
 LINKEDIN = "https://www.linkedin.com/in/kanushi-taneja/"
+
 EMAIL = "mailto:kanushitaneja.work@gmail.com"
 
 RESUME = "https://raw.githubusercontent.com/27-kanushitaneja-ctrl/E-portfolio/main/Kanushi%20Taneja_RESUME_.pdf"
 
 AGRAMI = "https://github.com/27-kanushitaneja-ctrl/FMCG-Live-Project"
+
 NYKAA = "https://github.com/27-kanushitaneja-ctrl/Nykaa-Spec-Campaign-WhoTaughtYou"
+
 FAE = "https://github.com/27-kanushitaneja-ctrl/FAE-YOUR-WAY"
+
 COIL = "https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
 
 
 # =========================================================
-# CUSTOM CSS
+# HTML HELPER
 # =========================================================
 
-st.markdown("""
+def render_html(html):
+    st.markdown(
+        textwrap.dedent(html).strip(),
+        unsafe_allow_html=True
+    )
+
+
+# =========================================================
+# DESIGN / CSS
+# =========================================================
+
+render_html("""
 <style>
 
-/* -------------------------------------------------------
-   FONTS
-------------------------------------------------------- */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600&display=swap');
-
-
-/* -------------------------------------------------------
-   GLOBAL
-------------------------------------------------------- */
 
 html {
     scroll-behavior: smooth;
@@ -72,71 +79,56 @@ header {
 }
 
 
-/* -------------------------------------------------------
-   GENERAL TYPE
-------------------------------------------------------- */
-
-h1, h2, h3, p {
-    font-family: 'DM Sans', sans-serif;
-}
-
-.serif {
-    font-family: 'Playfair Display', serif;
-}
-
-
-/* -------------------------------------------------------
-   NAVIGATION
-------------------------------------------------------- */
+/* =====================================================
+   NAV
+===================================================== */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 10px 0 22px 0;
-
     border-bottom: 1px solid #D6CEC3;
 }
 
 .nav-logo {
     font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
     font-size: 18px;
+    font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .nav-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 1.8px;
+    font-size: 10px;
+    letter-spacing: 2px;
     color: #746D65;
     font-weight: 600;
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    HERO
-------------------------------------------------------- */
+===================================================== */
 
 .hero {
-    padding: 85px 0 75px 0;
+    padding: 75px 0 55px 0;
 }
 
 .hero-kicker {
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #7A7167;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(58px, 8vw, 104px);
-    line-height: 0.92;
+    font-size: clamp(55px, 7.5vw, 98px);
+    line-height: 0.94;
     letter-spacing: -4px;
     font-weight: 500;
     color: #181716;
@@ -152,12 +144,11 @@ h1, h2, h3, p {
     line-height: 1.55;
     color: #48433D;
     max-width: 720px;
-    margin-top: 35px;
+    margin-top: 32px;
 }
 
 .hero-intro strong {
     color: #171615;
-    font-weight: 600;
 }
 
 .hero-detail {
@@ -165,54 +156,60 @@ h1, h2, h3, p {
     font-size: 15px;
     line-height: 1.75;
     color: #746D65;
-    max-width: 660px;
-    margin-top: 18px;
+    max-width: 650px;
+    margin-top: 17px;
 }
 
 .hero-rule {
-    width: 75px;
+    width: 70px;
     height: 2px;
     background: #191817;
-    margin-top: 38px;
+    margin-top: 35px;
 }
 
 
-/* -------------------------------------------------------
-   PROFILE IMAGE
-------------------------------------------------------- */
+/* =====================================================
+   PROFILE
+===================================================== */
 
-.profile-frame {
-    border-radius: 0px;
-    overflow: hidden;
+.profile-card {
     background: #DED7CD;
-    margin-top: 25px;
+    padding: 12px;
+    margin-top: 55px;
+}
+
+.profile-caption {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #81786E;
+    text-transform: uppercase;
+    margin-top: 12px;
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    BUTTONS
-------------------------------------------------------- */
+===================================================== */
 
 .stLinkButton > a {
     border-radius: 0px !important;
     font-family: 'DM Sans', sans-serif !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 700 !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 1.2px !important;
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    PROOF STRIP
-------------------------------------------------------- */
+===================================================== */
 
 .proof-strip {
     border-top: 1px solid #D1C8BC;
     border-bottom: 1px solid #D1C8BC;
-
     padding: 28px 0;
-
-    margin: 10px 0 100px 0;
+    margin: 15px 0 95px 0;
 }
 
 .proof-number {
@@ -223,17 +220,17 @@ h1, h2, h3, p {
 
 .proof-label {
     font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     color: #81786E;
-    margin-top: 7px;
+    margin-top: 8px;
 }
 
 
-/* -------------------------------------------------------
-   SECTION LABELS
-------------------------------------------------------- */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section-label {
     font-family: 'DM Sans', sans-serif;
@@ -251,17 +248,60 @@ h1, h2, h3, p {
     line-height: 1;
     font-weight: 500;
     letter-spacing: -1px;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    PROJECTS
-------------------------------------------------------- */
+===================================================== */
+
+.project-visual {
+    min-height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+}
+
+.agrami {
+    background: #D8D0C1;
+}
+
+.nykaa {
+    background: #E7D9D8;
+}
+
+.fae {
+    background: #DCD7CF;
+}
+
+.coil {
+    background: #D8DCE0;
+}
+
+.visual-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.visual-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 0.95;
+}
+
+.visual-title em {
+    font-style: italic;
+}
 
 .project-card {
     border-top: 1px solid #CFC6BA;
-    padding: 30px 0 42px 0;
+    padding: 30px 0 38px 0;
 }
 
 .project-number {
@@ -282,16 +322,12 @@ h1, h2, h3, p {
 
 .project-type {
     display: inline-block;
-
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     letter-spacing: 1.5px;
     font-weight: 700;
-
     padding: 6px 9px;
-
     border: 1px solid #BDB4A9;
-
     margin-bottom: 17px;
 }
 
@@ -312,72 +348,18 @@ h1, h2, h3, p {
 }
 
 .project-role-title {
+    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     letter-spacing: 1.4px;
     font-weight: 700;
     color: #82786E;
+    margin-bottom: 4px;
 }
 
 
-/* -------------------------------------------------------
-   PROJECT VISUALS
-------------------------------------------------------- */
-
-.project-visual {
-    min-height: 310px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 45px;
-
-    margin-bottom: 5px;
-}
-
-.visual-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    margin-bottom: 15px;
-}
-
-.visual-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 49px;
-    line-height: 0.95;
-}
-
-.visual-title em {
-    font-style: italic;
-}
-
-
-/* Individual visual worlds */
-
-.agrami {
-    background: #D8D0C1;
-}
-
-.nykaa {
-    background: #E7D9D8;
-}
-
-.fae {
-    background: #DCD7CF;
-}
-
-.coil {
-    background: #D8DCE0;
-}
-
-
-/* -------------------------------------------------------
+/* =====================================================
    ABOUT
-------------------------------------------------------- */
+===================================================== */
 
 .about-section {
     margin-top: 115px;
@@ -385,8 +367,8 @@ h1, h2, h3, p {
 
 .about-big {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    line-height: 1.22;
+    font-size: 40px;
+    line-height: 1.2;
 }
 
 .about-big em {
@@ -421,7 +403,7 @@ h1, h2, h3, p {
 
 .about-side-title {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 31px;
     line-height: 1.2;
     margin-top: 13px;
 }
@@ -435,21 +417,20 @@ h1, h2, h3, p {
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    THINKING
-------------------------------------------------------- */
+===================================================== */
 
 .thinking-section {
     margin-top: 115px;
     padding: 60px 0;
-
     border-top: 1px solid #CEC5B9;
     border-bottom: 1px solid #CEC5B9;
 }
 
 .thinking-intro {
     font-family: 'Playfair Display', serif;
-    font-size: 39px;
+    font-size: 40px;
     line-height: 1.2;
 }
 
@@ -460,7 +441,6 @@ h1, h2, h3, p {
 .thinking-step {
     padding: 18px 0;
     border-bottom: 1px solid #D8D0C5;
-
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     line-height: 1.6;
@@ -474,9 +454,9 @@ h1, h2, h3, p {
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    TOOLKIT
-------------------------------------------------------- */
+===================================================== */
 
 .toolkit-section {
     margin-top: 110px;
@@ -505,16 +485,14 @@ h1, h2, h3, p {
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    CONTACT
-------------------------------------------------------- */
+===================================================== */
 
 .contact-section {
     background: #191817;
     color: #F5F1EB;
-
     margin-top: 110px;
-
     padding: 70px 65px;
 }
 
@@ -548,19 +526,16 @@ h1, h2, h3, p {
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    FOOTER
-------------------------------------------------------- */
+===================================================== */
 
 .footer {
     border-top: 1px solid #CFC6BA;
-
     margin-top: 45px;
     padding-top: 20px;
-
     display: flex;
     justify-content: space-between;
-
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     letter-spacing: 1px;
@@ -568,9 +543,9 @@ h1, h2, h3, p {
 }
 
 
-/* -------------------------------------------------------
+/* =====================================================
    MOBILE
-------------------------------------------------------- */
+===================================================== */
 
 @media (max-width: 768px) {
 
@@ -580,11 +555,11 @@ h1, h2, h3, p {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: 55px 0;
     }
 
     .hero-title {
-        font-size: 59px;
+        font-size: 58px;
         letter-spacing: -2px;
     }
 
@@ -609,7 +584,7 @@ h1, h2, h3, p {
     }
 
     .about-side {
-        margin-top: 35px;
+        margin-top: 40px;
     }
 
     .thinking-section {
@@ -628,36 +603,41 @@ h1, h2, h3, p {
         display: block;
         line-height: 2;
     }
+
 }
 
 </style>
-""", unsafe_allow_html=True)
+""")
 
 
 # =========================================================
 # NAVIGATION
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="navbar">
-    <div class="nav-logo">KT.</div>
+
+    <div class="nav-logo">
+        KT.
+    </div>
 
     <div class="nav-text">
         MARKETING · BRAND · DIGITAL
     </div>
+
 </div>
-""", unsafe_allow_html=True)
+""")
 
 
 # =========================================================
 # HERO
 # =========================================================
 
-col1, col2 = st.columns([1.7, 0.75], gap="large")
+left, right = st.columns([1.65, 0.75], gap="large")
 
-with col1:
+with left:
 
-    st.markdown("""
+    render_html("""
     <div class="hero">
 
         <div class="hero-kicker">
@@ -685,7 +665,7 @@ with col1:
         <div class="hero-rule"></div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
     c1, c2 = st.columns(2)
 
@@ -704,97 +684,93 @@ with col1:
         )
 
 
-with col2:
+with right:
 
-    st.markdown(
-        '<div class="profile-frame">',
-        unsafe_allow_html=True
-    )
+    render_html("""
+    <div class="profile-card">
+    """)
 
     st.image(
         "profile.png",
         use_container_width=True
     )
 
-    st.markdown(
-        '</div>',
-        unsafe_allow_html=True
-    )
-
-    st.markdown("""
-    <div style="
-        font-family:'DM Sans', sans-serif;
-        font-size:10px;
-        letter-spacing:1.5px;
-        color:#81786E;
-        text-transform:uppercase;
-        margin-top:12px;
-    ">
-        Kanushi Taneja
+    render_html("""
     </div>
-    """, unsafe_allow_html=True)
+
+    <div class="profile-caption">
+        Kanushi Taneja · Marketing
+    </div>
+    """)
 
 
 # =========================================================
-# PROOF STRIP
+# PROOF
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="proof-strip">
-""", unsafe_allow_html=True)
+""")
 
 p1, p2, p3, p4 = st.columns(4)
 
 with p1:
-    st.markdown("""
+    render_html("""
     <div class="proof-number">4</div>
     <div class="proof-label">Internship Experiences</div>
-    """, unsafe_allow_html=True)
+    """)
 
 with p2:
-    st.markdown("""
+    render_html("""
     <div class="proof-number">30+</div>
     <div class="proof-label">Consumer Interviews</div>
-    """, unsafe_allow_html=True)
+    """)
 
 with p3:
-    st.markdown("""
+    render_html("""
     <div class="proof-number">6+</div>
     <div class="proof-label">Insurance Brands Analysed</div>
-    """, unsafe_allow_html=True)
+    """)
 
 with p4:
-    st.markdown("""
+    render_html("""
     <div class="proof-number">4</div>
     <div class="proof-label">Featured Projects</div>
-    """, unsafe_allow_html=True)
+    """)
 
-st.markdown("</div>", unsafe_allow_html=True)
+render_html("""
+</div>
+""")
 
 
 # =========================================================
 # SELECTED WORK
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div>
-    <div class="section-label">01 — Selected Work</div>
+
+    <div class="section-label">
+        01 — Selected Work
+    </div>
 
     <div class="section-heading">
         Ideas I've built.
     </div>
+
 </div>
-""", unsafe_allow_html=True)
+""")
 
 
-# ---------------------------------------------------------
-# AGRAMI
-# ---------------------------------------------------------
+# =========================================================
+# PROJECT 01 — AGRAMI
+# =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.markdown("""
+
+    render_html("""
     <div class="project-visual agrami">
 
         <div>
@@ -811,11 +787,11 @@ with left:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="project-card">
 
         <div class="project-number">
@@ -848,22 +824,20 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
-    st.link_button(
-        "VIEW PROJECT →",
-        AGRAMI
-    )
+    st.link_button("VIEW PROJECT →", AGRAMI)
 
 
-# ---------------------------------------------------------
-# NYKAA
-# ---------------------------------------------------------
+# =========================================================
+# PROJECT 02 — NYKAA
+# =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.markdown("""
+
+    render_html("""
     <div class="project-visual nykaa">
 
         <div>
@@ -880,11 +854,11 @@ with left:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="project-card">
 
         <div class="project-number">
@@ -900,10 +874,10 @@ with right:
         </div>
 
         <div class="project-description">
-            A social campaign built around a simple insight:
-            beauty knowledge is often passed from one person
-            to another. The idea turns that behaviour into
-            a community-led content platform.
+            A social campaign built around the idea that beauty
+            knowledge is passed from one person to another —
+            turning that behaviour into a community-led
+            content platform.
         </div>
 
         <div class="project-role">
@@ -918,22 +892,20 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
-    st.link_button(
-        "VIEW PROJECT →",
-        NYKAA
-    )
+    st.link_button("VIEW PROJECT →", NYKAA)
 
 
-# ---------------------------------------------------------
-# FAE
-# ---------------------------------------------------------
+# =========================================================
+# PROJECT 03 — FAE
+# =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.markdown("""
+
+    render_html("""
     <div class="project-visual fae">
 
         <div>
@@ -950,11 +922,11 @@ with left:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="project-card">
 
         <div class="project-number">
@@ -988,22 +960,20 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
-    st.link_button(
-        "VIEW PROJECT →",
-        FAE
-    )
+    st.link_button("VIEW PROJECT →", FAE)
 
 
-# ---------------------------------------------------------
-# COIL
-# ---------------------------------------------------------
+# =========================================================
+# PROJECT 04 — COIL
+# =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.markdown("""
+
+    render_html("""
     <div class="project-visual coil">
 
         <div>
@@ -1021,11 +991,11 @@ with left:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="project-card">
 
         <div class="project-number">
@@ -1060,19 +1030,16 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
-    st.link_button(
-        "VIEW PROJECT →",
-        COIL
-    )
+    st.link_button("VIEW PROJECT →", COIL)
 
 
 # =========================================================
-# ABOUT
+# ABOUT ME
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="about-section">
 
     <div class="section-label">
@@ -1080,13 +1047,13 @@ st.markdown("""
     </div>
 
 </div>
-""", unsafe_allow_html=True)
+""")
 
 left, right = st.columns([1.1, 0.9], gap="large")
 
 with left:
 
-    st.markdown("""
+    render_html("""
     <div class="about-big">
 
         Curious about people.<br>
@@ -1099,9 +1066,9 @@ with left:
     <div class="about-body">
 
         I'm currently pursuing my <strong>PGDM in Marketing</strong>,
-        building experience across marketing communications,
-        campaign planning, market research, competitor analysis
-        and client-facing work.
+        while building hands-on experience across marketing
+        communications, campaign planning, market research,
+        competitor analysis and client-facing work.
 
         <br><br>
 
@@ -1112,17 +1079,17 @@ with left:
 
         <br><br>
 
-        Whether I'm analysing a category, developing a campaign
-        platform or creating social content, I like connecting
-        the strategic thinking with the actual execution.
+        I enjoy moving between the strategic and the creative:
+        understanding the problem, finding the opportunity,
+        shaping the idea and thinking about how it can come
+        alive through content and communication.
 
     </div>
-    """, unsafe_allow_html=True)
-
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="about-side">
 
         <div class="about-side-label">
@@ -1141,14 +1108,14 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 
 # =========================================================
 # HOW I THINK
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="thinking-section">
 
     <div class="section-label">
@@ -1163,7 +1130,7 @@ st.markdown("""
     </div>
 
 </div>
-""", unsafe_allow_html=True)
+""")
 
 steps = [
     (
@@ -1189,13 +1156,13 @@ steps = [
     (
         "05",
         "MEASURE",
-        "Define what success should look like before execution."
+        "Define what success should look like."
     )
 ]
 
 for number, title, description in steps:
 
-    st.markdown(f"""
+    render_html(f"""
     <div class="thinking-step">
 
         <span>{number}</span>
@@ -1207,14 +1174,14 @@ for number, title, description in steps:
         {description}
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 
 # =========================================================
 # TOOLKIT
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="toolkit-section">
 
     <div class="section-label">
@@ -1226,13 +1193,13 @@ st.markdown("""
     </div>
 
 </div>
-""", unsafe_allow_html=True)
+""")
 
 left, right = st.columns(2, gap="large")
 
 with left:
 
-    st.markdown("""
+    render_html("""
     <div class="toolkit-box">
 
         <div class="toolkit-label">
@@ -1260,12 +1227,11 @@ with left:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
-
+    """)
 
 with right:
 
-    st.markdown("""
+    render_html("""
     <div class="toolkit-box">
 
         <div class="toolkit-label">
@@ -1291,14 +1257,14 @@ with right:
         </div>
 
     </div>
-    """, unsafe_allow_html=True)
+    """)
 
 
 # =========================================================
 # CONTACT
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="contact-section">
 
     <div class="contact-label">
@@ -1316,7 +1282,7 @@ st.markdown("""
     </div>
 
 </div>
-""", unsafe_allow_html=True)
+""")
 
 c1, c2, c3 = st.columns(3)
 
@@ -1346,7 +1312,7 @@ with c3:
 # FOOTER
 # =========================================================
 
-st.markdown("""
+render_html("""
 <div class="footer">
 
     <div>
@@ -1358,4 +1324,4 @@ st.markdown("""
     </div>
 
 </div>
-""", unsafe_allow_html=True)
+""")
