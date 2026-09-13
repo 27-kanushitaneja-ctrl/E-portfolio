@@ -1,8 +1,9 @@
 import streamlit as st
 
-# ---------------------------------------------------------
-# PAGE CONFIG
-# ---------------------------------------------------------
+# =========================================================
+# PAGE SETUP
+# =========================================================
+
 st.set_page_config(
     page_title="Kanushi Taneja | E-Portfolio",
     page_icon="✦",
@@ -10,23 +11,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------------------------------------------------------
+# =========================================================
 # LINKS
-# ---------------------------------------------------------
+# =========================================================
+
 LINKEDIN = "https://www.linkedin.com/in/kanushi-taneja/"
 GITHUB = "https://github.com/27-kanushitaneja-ctrl"
 EMAIL = "mailto:kanushitaneja.work@gmail.com"
 
-AGRAMI_REPO = "https://github.com/27-kanushitaneja-ctrl/FMCG-Live-Project"
-NYKAA_REPO = "https://github.com/27-kanushitaneja-ctrl/Nykaa-Spec-Campaign-WhoTaughtYou"
-FAE_REPO = "https://github.com/27-kanushitaneja-ctrl/FAE-YOUR-WAY"
-COIL_REPO = "https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
+AGRAMI = "https://github.com/27-kanushitaneja-ctrl/FMCG-Live-Project"
+NYKAA = "https://github.com/27-kanushitaneja-ctrl/Nykaa-Spec-Campaign-WhoTaughtYou"
+FAE = "https://github.com/27-kanushitaneja-ctrl/FAE-YOUR-WAY"
+COIL = "https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
 
-NYKAA_CANVA = "https://www.canva.com/design/DAHQfzF2gDQ/AtFCNZ3-0Mh1-qb2Iew47A/view"
+NYKAA_PRESENTATION = (
+    "https://www.canva.com/design/DAHQfzF2gDQ/"
+    "AtFCNZ3-0Mh1-qb2Iew47A/view"
+)
 
-# ---------------------------------------------------------
+# =========================================================
 # CUSTOM CSS
-# ---------------------------------------------------------
+# =========================================================
+
 st.markdown("""
 <style>
 
@@ -44,11 +50,10 @@ html {
 
 .block-container {
     max-width: 1150px;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     padding-bottom: 4rem;
 }
 
-/* Hide Streamlit chrome */
 #MainMenu {
     visibility: hidden;
 }
@@ -57,11 +62,6 @@ footer {
     visibility: hidden;
 }
 
-header {
-    background: transparent !important;
-}
-
-/* Typography */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif !important;
     color: #29241F !important;
@@ -73,43 +73,36 @@ h1 {
 }
 
 h2 {
-    font-size: 2.4rem !important;
+    font-size: 2.5rem !important;
 }
 
 h3 {
-    font-size: 1.35rem !important;
+    font-size: 1.4rem !important;
 }
 
-/* Navigation */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0 2rem 0;
+.top-line {
     border-bottom: 1px solid #DDD5CC;
+    padding-bottom: 1.2rem;
     margin-bottom: 4rem;
 }
 
-.nav-name {
+.name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
-.nav-right {
-    font-size: 0.9rem;
-    color: #6F655D;
-}
-
-/* Hero */
-.hero {
-    padding: 2rem 0 5rem 0;
+.top-role {
+    color: #776D65;
+    font-size: 0.85rem;
+    text-align: right;
+    padding-top: 0.3rem;
 }
 
 .eyebrow {
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #8A6D55;
     margin-bottom: 1rem;
@@ -117,58 +110,33 @@ h3 {
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 4.3rem;
-    line-height: 1.03;
-    margin: 0;
+    font-size: 4.2rem;
+    line-height: 1.05;
     color: #29241F;
+    margin-bottom: 1rem;
 }
 
-.hero-subtitle {
+.hero-role {
     font-size: 1.2rem;
-    color: #716860;
-    margin-top: 1.2rem;
-    line-height: 1.7;
+    color: #756B63;
+    line-height: 1.6;
 }
 
-.hero-description {
-    font-size: 1rem;
+.hero-text {
     color: #625A54;
-    line-height: 1.8;
-    max-width: 650px;
-    margin-top: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.85;
+    max-width: 680px;
+    margin-top: 1.2rem;
 }
 
-.photo {
+.profile-image {
     border-radius: 50%;
-    border: 8px solid #E7E0D8;
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 5px;
-    text-decoration: none !important;
-    font-weight: 600;
-    font-size: 0.88rem;
-    margin-right: 0.5rem;
-    margin-top: 1.3rem;
-}
-
-.btn-primary {
-    background: #29241F;
-    color: white !important;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #29241F !important;
-    border: 1px solid #B9AEA4;
-}
-
-/* Sections */
 .section {
-    padding: 4.5rem 0;
+    padding-top: 4rem;
+    margin-top: 4rem;
     border-top: 1px solid #DDD5CC;
 }
 
@@ -181,49 +149,63 @@ h3 {
     margin-bottom: 0.7rem;
 }
 
-/* Cards */
-.card {
+.section-description {
+    color: #6B625B;
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.project-card {
     background: #FCFAF7;
     border: 1px solid #E3DBD2;
-    border-radius: 8px;
-    padding: 1.8rem;
-    height: 100%;
-    box-sizing: border-box;
+    border-radius: 9px;
+    padding: 1.7rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-number {
-    font-size: 0.72rem;
-    letter-spacing: 2px;
     color: #9A8A7B;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
     font-weight: 700;
 }
 
 .project-type {
-    text-transform: uppercase;
+    color: #8A6D55;
     font-size: 0.68rem;
     letter-spacing: 1.5px;
-    color: #8A6D55;
+    text-transform: uppercase;
     font-weight: 700;
-    margin-top: 0.8rem;
+    margin-top: 0.7rem;
 }
 
 .project-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
-    margin: 0.5rem 0;
+    font-size: 1.75rem;
+    margin: 0.4rem 0;
+    color: #29241F;
 }
 
 .project-role {
-    font-size: 0.88rem;
     font-weight: 600;
+    font-size: 0.85rem;
     color: #514840;
     margin-bottom: 1rem;
 }
 
 .project-text {
     color: #6B625B;
-    font-size: 0.9rem;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.small-heading {
+    color: #8A6D55;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-top: 0.9rem;
 }
 
 .tag {
@@ -231,496 +213,487 @@ h3 {
     background: #EEE7DF;
     color: #66594F;
     border-radius: 20px;
-    padding: 0.35rem 0.65rem;
-    margin: 0.25rem 0.2rem 0.25rem 0;
-    font-size: 0.7rem;
+    padding: 0.3rem 0.65rem;
+    margin: 0.2rem 0.15rem 0.2rem 0;
+    font-size: 0.68rem;
 }
 
-/* Evidence */
-.evidence {
+.evidence-box {
     background: #EEE7DF;
-    border-radius: 8px;
-    padding: 1.3rem;
-    margin-top: 1.3rem;
+    border-radius: 7px;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .evidence-title {
-    font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #66594F;
 }
 
-/* Skills */
-.skill-box {
+.skill-card {
     background: #FCFAF7;
     border: 1px solid #E3DBD2;
-    padding: 1.3rem;
-    border-radius: 7px;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 1.4rem;
+    min-height: 170px;
 }
 
 .skill-title {
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
 }
 
 .skill-text {
     color: #6B625B;
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: 0.86rem;
+    line-height: 1.8;
 }
 
-/* Contact */
-.contact-box {
+.contact-card {
     background: #29241F;
-    color: white;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2.8rem;
 }
 
-.contact-box h2 {
+.contact-card h2 {
     color: white !important;
 }
 
-.contact-box p {
-    color: #DDD4CC;
-    line-height: 1.7;
+.contact-text {
+    color: #DCD3CA;
+    line-height: 1.8;
 }
 
-/* Footer */
+.disclaimer {
+    color: #8A8179;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
 .footer {
     text-align: center;
     color: #81766D;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     padding-top: 3rem;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
+# =========================================================
+# TOP BAR
+# =========================================================
 
-# ---------------------------------------------------------
-# NAVIGATION
-# ---------------------------------------------------------
-st.markdown("""
-<div class="nav">
-    <div class="nav-name">Kanushi Taneja</div>
-    <div class="nav-right">Marketing · Strategy · Content</div>
-</div>
-""", unsafe_allow_html=True)
+top1, top2 = st.columns([2, 1])
 
+with top1:
+    st.markdown(
+        '<div class="name">Kanushi Taneja</div>',
+        unsafe_allow_html=True
+    )
 
-# ---------------------------------------------------------
+with top2:
+    st.markdown(
+        '<div class="top-role">Marketing · Strategy · Content</div>',
+        unsafe_allow_html=True
+    )
+
+st.markdown(
+    '<div class="top-line"></div>',
+    unsafe_allow_html=True
+)
+
+# =========================================================
 # HERO
-# ---------------------------------------------------------
-hero_left, hero_right = st.columns([2.3, 1], gap="large")
+# =========================================================
 
-with hero_left:
+hero1, hero2 = st.columns([1.8, 1], gap="large")
 
-    st.markdown("""
-    <div class="hero">
-        <div class="eyebrow">E-Portfolio</div>
+with hero1:
 
-        <div class="hero-title">
-            Building brands<br>
-            people remember.
-        </div>
+    st.markdown(
+        '<div class="eyebrow">E-Portfolio</div>',
+        unsafe_allow_html=True
+    )
 
-        <div class="hero-subtitle">
-            Marketing · Brand Strategy · Digital & Content
-        </div>
+    st.markdown(
+        '<div class="hero-title">'
+        'Building brands<br>people remember.'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
-        <div class="hero-description">
-            I am a marketing student interested in understanding people,
-            translating insights into ideas, and building strategic brand
-            communication across digital and social platforms.
-        </div>
+    st.markdown(
+        '<div class="hero-role">'
+        'Marketing · Brand Strategy · Digital & Content'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
-        <a class="btn btn-primary"
-           href="#projects">
-           Explore My Work
+    st.markdown(
+        '<div class="hero-text">'
+        'I am a marketing student interested in understanding people, '
+        'translating insights into ideas, and building strategic brand '
+        'communication across digital and social platforms.'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        f'''
+        <a href="{LINKEDIN}" target="_blank"
+        style="display:inline-block;
+        margin-top:1.3rem;
+        margin-right:0.6rem;
+        padding:0.7rem 1.1rem;
+        background:#29241F;
+        color:white;
+        text-decoration:none;
+        border-radius:5px;
+        font-weight:600;
+        font-size:0.85rem;">
+        LinkedIn
         </a>
 
-        <a class="btn btn-secondary"
-           href="https://www.linkedin.com/in/kanushi-taneja/"
-           target="_blank">
-           LinkedIn
+        <a href="{GITHUB}" target="_blank"
+        style="display:inline-block;
+        margin-top:1.3rem;
+        padding:0.7rem 1.1rem;
+        border:1px solid #B9AEA4;
+        color:#29241F;
+        text-decoration:none;
+        border-radius:5px;
+        font-weight:600;
+        font-size:0.85rem;">
+        GitHub
         </a>
+        ''',
+        unsafe_allow_html=True
+    )
 
-        <a class="btn btn-secondary"
-           href="https://github.com/27-kanushitaneja-ctrl"
-           target="_blank">
-           GitHub
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
+with hero2:
 
-with hero_right:
-    st.image("profile.png", use_container_width=True)
+    try:
+        st.image("profile.png", use_container_width=True)
+    except:
+        st.info("Profile photo")
 
-
-# ---------------------------------------------------------
+# =========================================================
 # ABOUT
-# ---------------------------------------------------------
-st.markdown('<div class="section">', unsafe_allow_html=True)
+# =========================================================
 
-st.markdown("""
-<div class="section-label">01 — About</div>
-<h2>About Me</h2>
-""", unsafe_allow_html=True)
+st.markdown(
+    '<div class="section"></div>',
+    unsafe_allow_html=True
+)
 
-about_left, about_right = st.columns([1.5, 1], gap="large")
+st.markdown(
+    '<div class="section-label">01 — About</div>',
+    unsafe_allow_html=True
+)
 
-with about_left:
-    st.markdown("""
-    <p style="line-height:1.9; color:#625A54;">
-    I approach marketing at the intersection of <b>strategy, consumer
-    understanding and creative communication</b>.
-    </p>
+st.markdown("## About Me")
 
-    <p style="line-height:1.9; color:#625A54;">
-    My project experience spans live brand work, speculative campaigns,
-    social media strategy and cross-cultural qualitative research.
-    </p>
+about1, about2 = st.columns([1.5, 1], gap="large")
 
-    <p style="line-height:1.9; color:#625A54;">
-    I enjoy moving from a business or consumer problem to a clear insight,
-    a strong idea and an executable communication plan.
-    </p>
-    """, unsafe_allow_html=True)
+with about1:
 
-with about_right:
-    st.markdown("""
-    <div class="card">
+    st.markdown(
+        """
+        <p class="hero-text">
+        I approach marketing at the intersection of
+        <b>strategy, consumer understanding and creative communication.</b>
+        </p>
+
+        <p class="hero-text">
+        My project experience spans live brand work, speculative campaigns,
+        social media strategy and cross-cultural qualitative research.
+        </p>
+
+        <p class="hero-text">
+        I enjoy moving from a business or consumer problem to a clear insight,
+        a strong idea and an executable communication plan.
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+with about2:
+
+    st.markdown(
+        """
+        <div class="project-card">
         <div class="project-type">What I bring</div>
+
         <h3>Strategy with a creative lens</h3>
+
         <p class="project-text">
-        Consumer-first thinking, campaign conceptualisation, social
-        strategy, research and structured problem solving.
+        Consumer-first thinking, campaign conceptualisation,
+        social strategy, research and structured problem solving.
         </p>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.markdown('</div>', unsafe_allow_html=True)
-
-
-# ---------------------------------------------------------
+# =========================================================
 # PROJECTS
-# ---------------------------------------------------------
-st.markdown('<div class="section" id="projects">', unsafe_allow_html=True)
+# =========================================================
 
-st.markdown("""
-<div class="section-label">02 — Selected Work</div>
-<h2>Projects</h2>
-<p style="color:#6B625B; max-width:700px; line-height:1.7;">
-A selection of live, academic and speculative projects demonstrating
-strategy, research, campaign thinking and digital execution.
-</p>
-""", unsafe_allow_html=True)
+st.markdown(
+    '<div class="section"></div>',
+    unsafe_allow_html=True
+)
 
+st.markdown(
+    '<div class="section-label">02 — Selected Work</div>',
+    unsafe_allow_html=True
+)
 
-# ---------------- AGRAMI ----------------
-st.markdown("### 01", unsafe_allow_html=True)
+st.markdown("## Projects")
 
-agr_left, agr_right = st.columns([1.5, 1], gap="large")
+st.markdown(
+    '<p class="section-description">'
+    'A selection of live, academic and speculative projects demonstrating '
+    'strategy, research, campaign thinking and digital execution.'
+    '</p>',
+    unsafe_allow_html=True
+)
 
-with agr_left:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Live FMCG Project</div>
-        <div class="project-title">AGRAMI — Integrated Brand & Social Strategy</div>
-        <div class="project-role">My Role: Content & Social Strategy</div>
+# =========================================================
+# AGRAMI
+# =========================================================
 
-        <p class="project-text">
-        Developed content and social components for AGRAMI, including
-        content pillars, sample creative concepts, launch planning and
-        influencer, PR and community strategy.
-        </p>
+st.markdown(
+    """
+    <div class="project-card">
 
-        <div>
-            <span class="tag">Content Strategy</span>
-            <span class="tag">Social Media</span>
-            <span class="tag">Campaign Planning</span>
-            <span class="tag">Influencer Marketing</span>
-            <span class="tag">PR & Community</span>
-        </div>
+    <div class="project-number">01</div>
 
-        <div class="evidence">
-            <div class="evidence-title">My Contribution</div>
-            <p class="project-text">
-            Created the content pillars and sample creative mapping,
-            contributed to launch strategy, and developed influencer,
-            PR and community activation ideas.
-            </p>
-        </div>
+    <div class="project-type">Live FMCG Project</div>
 
-        <a class="btn btn-primary"
-           href="https://github.com/27-kanushitaneja-ctrl/FMCG-Live-Project"
-           target="_blank">
-           View Evidence
-        </a>
+    <div class="project-title">
+    AGRAMI — Integrated Brand & Social Strategy
     </div>
-    """, unsafe_allow_html=True)
 
-with agr_right:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Purpose</div>
-        <h3>Build trust through content</h3>
-        <p class="project-text">
-        The strategy focused on helping consumers understand AGRAMI's
-        sourcing, ingredients, purity and food usage.
-        </p>
-
-        <div class="project-type">Process</div>
-        <p class="project-text">
-        Content pillars → creative concepts → launch sequence →
-        creator/PR/community strategy.
-        </p>
-
-        <div class="project-type">Outcome</div>
-        <p class="project-text">
-        A structured social content and activation framework covering
-        education, transparency, recipes and community participation.
-        </p>
+    <div class="project-role">
+    My Role: Content & Social Strategy
     </div>
-    """, unsafe_allow_html=True)
 
+    <p class="project-text">
+    Developed content and social components for AGRAMI, including
+    content pillars, sample creative concepts, launch planning and
+    influencer, PR and community strategy.
+    </p>
 
-# ---------------- NYKAA ----------------
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("### 02", unsafe_allow_html=True)
+    <span class="tag">Content Strategy</span>
+    <span class="tag">Social Media</span>
+    <span class="tag">Campaign Planning</span>
+    <span class="tag">Influencer Marketing</span>
+    <span class="tag">PR & Community</span>
 
-ny_left, ny_right = st.columns([1.5, 1], gap="large")
+    <div class="evidence-box">
+    <div class="evidence-title">My Contribution</div>
 
-with ny_left:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Speculative Brand Campaign</div>
-        <div class="project-title">Nykaa — “Who Taught You?”</div>
-        <div class="project-role">My Role: Campaign Strategy & Concept Development</div>
-
-        <p class="project-text">
-        Developed a social campaign built around the idea that beauty
-        knowledge is passed from one person to another.
-        </p>
-
-        <div>
-            <span class="tag">Consumer Insight</span>
-            <span class="tag">Brand Strategy</span>
-            <span class="tag">Campaign Concept</span>
-            <span class="tag">UGC</span>
-            <span class="tag">Social Strategy</span>
-        </div>
-
-        <div class="evidence">
-            <div class="evidence-title">My Contribution</div>
-            <p class="project-text">
-            Audited Nykaa's Instagram presence, identified the opportunity
-            to shift from “brand teaches” to “community teaches community,”
-            and developed the campaign insight, platform, content mechanics,
-            rollout and KPIs.
-            </p>
-        </div>
-
-        <a class="btn btn-primary"
-           href="https://github.com/27-kanushitaneja-ctrl/Nykaa-Spec-Campaign-WhoTaughtYou"
-           target="_blank">
-           GitHub
-        </a>
-
-        <a class="btn btn-secondary"
-           href="https://www.canva.com/design/DAHQfzF2gDQ/AtFCNZ3-0Mh1-qb2Iew47A/view"
-           target="_blank">
-           View Presentation
-        </a>
+    <p class="project-text">
+    Created content pillars and sample creative mapping, contributed
+    to launch strategy, and developed influencer, PR and community
+    activation ideas.
+    </p>
     </div>
-    """, unsafe_allow_html=True)
 
-with ny_right:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Purpose</div>
-        <h3>Turn beauty knowledge into community</h3>
-        <p class="project-text">
-        Explore how Nykaa could move beyond teaching consumers to
-        enabling consumers to teach and credit one another.
-        </p>
-
-        <div class="project-type">Process</div>
-        <p class="project-text">
-        Instagram audit → consumer insight → campaign platform →
-        content formats → four-week rollout → KPIs.
-        </p>
-
-        <div class="project-type">Outcome</div>
-        <p class="project-text">
-        A social-first campaign framework designed to create
-        participation, UGC and “handoff chains” between consumers.
-        </p>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
+st.link_button("View AGRAMI Evidence →", AGRAMI)
 
-# ---------------- FAE ----------------
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("### 03", unsafe_allow_html=True)
+# =========================================================
+# NYKAA
+# =========================================================
 
-fae_left, fae_right = st.columns([1.5, 1], gap="large")
+st.markdown(
+    """
+    <div class="project-card">
 
-with fae_left:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Speculative Beauty Campaign</div>
-        <div class="project-title">FAE Beauty — FAE YOUR WAY</div>
-        <div class="project-role">My Role: Campaign Concept & Social Strategy</div>
+    <div class="project-number">02</div>
 
-        <p class="project-text">
-        Developed a mood-led campaign platform based on the insight
-        that consumers do not have one fixed beauty aesthetic.
-        </p>
+    <div class="project-type">Speculative Brand Campaign</div>
 
-        <div>
-            <span class="tag">Consumer Insight</span>
-            <span class="tag">Campaign Strategy</span>
-            <span class="tag">Creative Strategy</span>
-            <span class="tag">Social Media</span>
-            <span class="tag">UGC Strategy</span>
-        </div>
-
-        <div class="evidence">
-            <div class="evidence-title">Campaign Idea</div>
-            <p class="project-text">
-            “Your face. Your mood. Your rules.” The campaign connects
-            Mood → Look → Product → FAE and uses creator and UGC
-            participation to make the platform social.
-            </p>
-        </div>
-
-        <a class="btn btn-primary"
-           href="https://github.com/27-kanushitaneja-ctrl/FAE-YOUR-WAY"
-           target="_blank">
-           View Evidence
-        </a>
+    <div class="project-title">
+    Nykaa — “Who Taught You?”
     </div>
-    """, unsafe_allow_html=True)
 
-with fae_right:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Purpose</div>
-        <h3>Move from one aesthetic to self-expression</h3>
-        <p class="project-text">
-        The concept explores how FAE can position beauty around
-        individual moods rather than one predefined aesthetic.
-        </p>
-
-        <div class="project-type">Process</div>
-        <p class="project-text">
-        Human insight → four mood territories → campaign platform →
-        social content loop → creator & UGC strategy.
-        </p>
-
-        <div class="project-type">Outcome</div>
-        <p class="project-text">
-        A complete social campaign concept spanning Hero Reel,
-        Stories, Carousel, Creator Content and UGC.
-        </p>
-
-        <p style="font-size:0.72rem; color:#8A8179; margin-top:1.2rem;">
-        Speculative / student concept. Mockup engagement figures
-        are illustrative and not actual campaign results.
-        </p>
+    <div class="project-role">
+    My Role: Campaign Strategy & Concept Development
     </div>
-    """, unsafe_allow_html=True)
 
+    <p class="project-text">
+    Developed a social campaign built around the idea that beauty
+    knowledge is passed from one person to another.
+    </p>
 
-# ---------------- COIL ----------------
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("### 04", unsafe_allow_html=True)
+    <span class="tag">Consumer Insight</span>
+    <span class="tag">Brand Strategy</span>
+    <span class="tag">Campaign Concept</span>
+    <span class="tag">UGC</span>
+    <span class="tag">Social Strategy</span>
 
-coil_left, coil_right = st.columns([1.5, 1], gap="large")
+    <div class="evidence-box">
+    <div class="evidence-title">My Contribution</div>
 
-with coil_left:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">International Collaborative Research</div>
-        <div class="project-title">COIL — Globalization in Action</div>
-        <div class="project-role">My Role: India FGD Moderator</div>
-
-        <p class="project-text">
-        A cross-cultural qualitative research project comparing US and
-        Indian student perspectives on the skills required for future careers.
-        </p>
-
-        <div>
-            <span class="tag">Qualitative Research</span>
-            <span class="tag">FGD Moderation</span>
-            <span class="tag">Cross-Cultural Research</span>
-            <span class="tag">Interviewing</span>
-            <span class="tag">Insight Generation</span>
-        </div>
-
-        <div class="evidence">
-            <div class="evidence-title">My Contribution</div>
-            <p class="project-text">
-            Moderated the India-side Focus Group Discussion, facilitated
-            participant conversations, probed responses and contributed
-            qualitative perspectives to the US–India comparison.
-            </p>
-        </div>
-
-        <a class="btn btn-primary"
-           href="https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
-           target="_blank">
-           View Evidence
-        </a>
+    <p class="project-text">
+    Audited Nykaa's Instagram presence, identified the opportunity
+    to shift from brand-led teaching to community-led teaching,
+    and developed the campaign insight, platform, content mechanics,
+    rollout and KPIs.
+    </p>
     </div>
-    """, unsafe_allow_html=True)
 
-with coil_right:
-    st.markdown("""
-    <div class="card">
-        <div class="project-type">Purpose</div>
-        <h3>Understand future-career skills</h3>
-        <p class="project-text">
-        The research explored perceptions of technical and soft skills,
-        AI literacy, adaptability and employability across the US and India.
-        </p>
-
-        <div class="project-type">Process</div>
-        <p class="project-text">
-        Focus groups → in-depth interviews → secondary research →
-        US–India comparison → findings.
-        </p>
-
-        <div class="project-type">Outcome</div>
-        <p class="project-text">
-        The research identified broad agreement on the importance of
-        technical and soft skills, with differences in emphasis across contexts.
-        </p>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
-st.markdown('</div>', unsafe_allow_html=True)
+ny1, ny2 = st.columns(2)
 
+with ny1:
+    st.link_button("View Nykaa GitHub →", NYKAA)
 
-# ---------------------------------------------------------
+with ny2:
+    st.link_button("View Presentation →", NYKAA_PRESENTATION)
+
+# =========================================================
+# FAE
+# =========================================================
+
+st.markdown(
+    """
+    <div class="project-card">
+
+    <div class="project-number">03</div>
+
+    <div class="project-type">Speculative Beauty Campaign</div>
+
+    <div class="project-title">
+    FAE Beauty — FAE YOUR WAY
+    </div>
+
+    <div class="project-role">
+    My Role: Campaign Concept & Social Strategy
+    </div>
+
+    <p class="project-text">
+    Developed a mood-led campaign platform based on the insight
+    that consumers do not have one fixed beauty aesthetic.
+    </p>
+
+    <span class="tag">Consumer Insight</span>
+    <span class="tag">Campaign Strategy</span>
+    <span class="tag">Creative Strategy</span>
+    <span class="tag">Social Media</span>
+    <span class="tag">UGC Strategy</span>
+
+    <div class="evidence-box">
+    <div class="evidence-title">Campaign Idea</div>
+
+    <p class="project-text">
+    “Your face. Your mood. Your rules.”
+    The campaign connects Mood → Look → Product → FAE
+    and uses creator and UGC participation to make the platform social.
+    </p>
+    </div>
+
+    <div class="disclaimer">
+    Speculative / student concept. Any engagement figures appearing
+    in creative mockups are illustrative concept figures and not
+    actual campaign results.
+    </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.link_button("View FAE Evidence →", FAE)
+
+# =========================================================
+# COIL
+# =========================================================
+
+st.markdown(
+    """
+    <div class="project-card">
+
+    <div class="project-number">04</div>
+
+    <div class="project-type">
+    International Collaborative Research
+    </div>
+
+    <div class="project-title">
+    COIL — Globalization in Action
+    </div>
+
+    <div class="project-role">
+    My Role: India FGD Moderator
+    </div>
+
+    <p class="project-text">
+    A cross-cultural qualitative research project comparing US and
+    Indian student perspectives on the skills required for future careers.
+    </p>
+
+    <span class="tag">Qualitative Research</span>
+    <span class="tag">FGD Moderation</span>
+    <span class="tag">Cross-Cultural Research</span>
+    <span class="tag">Interviewing</span>
+    <span class="tag">Insight Generation</span>
+
+    <div class="evidence-box">
+    <div class="evidence-title">My Contribution</div>
+
+    <p class="project-text">
+    Moderated the India-side Focus Group Discussion, facilitated
+    participant conversations, probed responses and contributed
+    qualitative perspectives to the US–India comparison.
+    </p>
+    </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.link_button("View COIL Evidence →", COIL)
+
+# =========================================================
 # SKILLS
-# ---------------------------------------------------------
-st.markdown('<div class="section">', unsafe_allow_html=True)
+# =========================================================
 
-st.markdown("""
-<div class="section-label">03 — Capabilities</div>
-<h2>Skills & Tools</h2>
-""", unsafe_allow_html=True)
+st.markdown(
+    '<div class="section"></div>',
+    unsafe_allow_html=True
+)
 
-skill1, skill2, skill3 = st.columns(3)
+st.markdown(
+    '<div class="section-label">03 — Capabilities</div>',
+    unsafe_allow_html=True
+)
 
-with skill1:
-    st.markdown("""
-    <div class="skill-box">
+st.markdown("## Skills & Tools")
+
+s1, s2, s3 = st.columns(3)
+
+with s1:
+    st.markdown(
+        """
+        <div class="skill-card">
         <div class="skill-title">Strategy</div>
         <div class="skill-text">
         Brand Strategy<br>
@@ -729,12 +702,15 @@ with skill1:
         Positioning<br>
         Creative Strategy
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-with skill2:
-    st.markdown("""
-    <div class="skill-box">
+with s2:
+    st.markdown(
+        """
+        <div class="skill-card">
         <div class="skill-title">Digital & Content</div>
         <div class="skill-text">
         Social Media Strategy<br>
@@ -743,12 +719,15 @@ with skill2:
         Influencer Marketing<br>
         PR & Community
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-with skill3:
-    st.markdown("""
-    <div class="skill-box">
+with s3:
+    st.markdown(
+        """
+        <div class="skill-card">
         <div class="skill-title">Research</div>
         <div class="skill-text">
         Qualitative Research<br>
@@ -757,75 +736,87 @@ with skill3:
         Cross-Cultural Research<br>
         Insight Generation
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-tools1, tools2 = st.columns(2)
+tool1, tool2 = st.columns(2)
 
-with tools1:
-    st.markdown("""
-    <div class="skill-box">
+with tool1:
+    st.markdown(
+        """
+        <div class="skill-card">
         <div class="skill-title">Tools</div>
         <div class="skill-text">
         Canva · GitHub · Streamlit · Microsoft Office
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-with tools2:
-    st.markdown("""
-    <div class="skill-box">
+with tool2:
+    st.markdown(
+        """
+        <div class="skill-card">
         <div class="skill-title">Working Style</div>
         <div class="skill-text">
         Consumer-first · Structured · Collaborative ·
         Research-led · Creative
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.markdown('</div>', unsafe_allow_html=True)
-
-
-# ---------------------------------------------------------
+# =========================================================
 # CONTACT
-# ---------------------------------------------------------
-st.markdown('<div class="section">', unsafe_allow_html=True)
+# =========================================================
 
-st.markdown("""
-<div class="contact-box">
+st.markdown(
+    '<div class="section"></div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class="contact-card">
+
     <div class="section-label">04 — Contact</div>
+
     <h2>Let's connect.</h2>
-    <p>
+
+    <p class="contact-text">
     I am open to conversations around marketing, brand strategy,
     digital content and opportunities where consumer insight can
     translate into meaningful brand work.
     </p>
 
-    <a class="btn btn-secondary"
-       style="background:white;"
-       href="mailto:kanushitaneja.work@gmail.com">
-       Email Me
-    </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-    <a class="btn btn-secondary"
-       style="background:white;"
-       href="https://www.linkedin.com/in/kanushi-taneja/"
-       target="_blank">
-       LinkedIn
-    </a>
-</div>
-""", unsafe_allow_html=True)
+c1, c2 = st.columns(2)
 
-st.markdown('</div>', unsafe_allow_html=True)
+with c1:
+    st.link_button("Email Me →", EMAIL)
 
+with c2:
+    st.link_button("LinkedIn →", LINKEDIN)
 
-# ---------------------------------------------------------
+# =========================================================
 # FOOTER
-# ---------------------------------------------------------
-st.markdown("""
-<div class="footer">
+# =========================================================
+
+st.markdown(
+    """
+    <div class="footer">
     © 2026 Kanushi Taneja · Marketing · Brand Strategy · Digital & Content
-</div>
-""", unsafe_allow_html=True)
+    </div>
+    """,
+    unsafe_allow_html=True
+)
