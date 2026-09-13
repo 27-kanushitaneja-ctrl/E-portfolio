@@ -1,9 +1,4 @@
 import streamlit as st
-import textwrap
-
-# =========================================================
-# PAGE SETUP
-# =========================================================
 
 st.set_page_config(
     page_title="Kanushi Taneja | Marketing Portfolio",
@@ -17,42 +12,31 @@ st.set_page_config(
 # =========================================================
 
 LINKEDIN = "https://www.linkedin.com/in/kanushi-taneja/"
-
 EMAIL = "mailto:kanushitaneja.work@gmail.com"
 
 RESUME = "https://raw.githubusercontent.com/27-kanushitaneja-ctrl/E-portfolio/main/Kanushi%20Taneja_RESUME_.pdf"
 
 AGRAMI = "https://github.com/27-kanushitaneja-ctrl/FMCG-Live-Project"
-
 NYKAA = "https://github.com/27-kanushitaneja-ctrl/Nykaa-Spec-Campaign-WhoTaughtYou"
-
 FAE = "https://github.com/27-kanushitaneja-ctrl/FAE-YOUR-WAY"
-
 COIL = "https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
 
 
 # =========================================================
-# HTML HELPER
+# GLOBAL CSS
 # =========================================================
 
-def render_html(html):
-    st.markdown(
-        textwrap.dedent(html).strip(),
-        unsafe_allow_html=True
-    )
-
-
-# =========================================================
-# DESIGN / CSS
-# =========================================================
-
-render_html("""
+st.html("""
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600&display=swap');
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    background: #F5F1EB;
 }
 
 .stApp {
@@ -62,8 +46,8 @@ html {
 
 .block-container {
     max-width: 1180px;
-    padding-top: 1.5rem;
-    padding-bottom: 5rem;
+    padding-top: 25px;
+    padding-bottom: 80px;
 }
 
 #MainMenu {
@@ -79,59 +63,56 @@ header {
 }
 
 
-/* =====================================================
-   NAV
-===================================================== */
+/* NAVIGATION */
 
 .navbar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0 22px 0;
-    border-bottom: 1px solid #D6CEC3;
+
+    padding: 12px 0 22px;
+
+    border-bottom: 1px solid #D5CDC2;
 }
 
-.nav-logo {
+.logo {
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: -0.5px;
 }
 
-.nav-text {
+.nav-right {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
-    letter-spacing: 2px;
-    color: #746D65;
     font-weight: 600;
+    letter-spacing: 2px;
+    color: #766E65;
 }
 
 
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero {
-    padding: 75px 0 55px 0;
+    padding: 75px 0 45px;
 }
 
-.hero-kicker {
+.kicker {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
+    font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #7A7167;
-    font-weight: 700;
-    margin-bottom: 24px;
+    color: #7D746A;
+    margin-bottom: 25px;
 }
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(55px, 7.5vw, 98px);
-    line-height: 0.94;
+    font-size: 82px;
+    line-height: .94;
     letter-spacing: -4px;
     font-weight: 500;
-    color: #181716;
 }
 
 .hero-title em {
@@ -141,14 +122,14 @@ header {
 .hero-intro {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
-    line-height: 1.55;
+    line-height: 1.6;
     color: #48433D;
-    max-width: 720px;
+    max-width: 700px;
     margin-top: 32px;
 }
 
 .hero-intro strong {
-    color: #171615;
+    color: #191817;
 }
 
 .hero-detail {
@@ -157,10 +138,10 @@ header {
     line-height: 1.75;
     color: #746D65;
     max-width: 650px;
-    margin-top: 17px;
+    margin-top: 16px;
 }
 
-.hero-rule {
+.hero-line {
     width: 70px;
     height: 2px;
     background: #191817;
@@ -168,69 +149,51 @@ header {
 }
 
 
-/* =====================================================
-   PROFILE
-===================================================== */
+/* PROFILE */
 
 .profile-card {
-    background: #DED7CD;
+    background: #DDD6CC;
     padding: 12px;
-    margin-top: 55px;
+    margin-top: 65px;
 }
 
 .profile-caption {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 1.5px;
-    color: #81786E;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
+    color: #81786E;
     margin-top: 12px;
 }
 
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+/* PROOF */
 
-.stLinkButton > a {
-    border-radius: 0px !important;
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 10px !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.2px !important;
-}
-
-
-/* =====================================================
-   PROOF STRIP
-===================================================== */
-
-.proof-strip {
+.proof {
     border-top: 1px solid #D1C8BC;
     border-bottom: 1px solid #D1C8BC;
+
     padding: 28px 0;
-    margin: 15px 0 95px 0;
+
+    margin: 20px 0 100px;
 }
 
 .proof-number {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
-    line-height: 1;
 }
 
 .proof-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #81786E;
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 
-/* =====================================================
-   SECTIONS
-===================================================== */
+/* SECTIONS */
 
 .section-label {
     font-family: 'DM Sans', sans-serif;
@@ -239,29 +202,28 @@ header {
     letter-spacing: 2.2px;
     text-transform: uppercase;
     color: #83796E;
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 }
 
-.section-heading {
+.section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 51px;
+    font-size: 52px;
     line-height: 1;
     font-weight: 500;
-    letter-spacing: -1px;
-    margin-bottom: 48px;
+    margin-bottom: 45px;
 }
 
 
-/* =====================================================
-   PROJECTS
-===================================================== */
+/* PROJECT VISUALS */
 
 .project-visual {
-    min-height: 310px;
+    height: 315px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 45px;
+
+    padding: 40px;
 }
 
 .agrami {
@@ -273,7 +235,7 @@ header {
 }
 
 .fae {
-    background: #DCD7CF;
+    background: #DDD8D0;
 }
 
 .coil {
@@ -283,8 +245,8 @@ header {
 .visual-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 2px;
     font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
@@ -292,43 +254,48 @@ header {
 .visual-title {
     font-family: 'Playfair Display', serif;
     font-size: 48px;
-    line-height: 0.95;
+    line-height: .95;
 }
 
 .visual-title em {
     font-style: italic;
 }
 
-.project-card {
-    border-top: 1px solid #CFC6BA;
-    padding: 30px 0 38px 0;
+
+/* PROJECT INFO */
+
+.project {
+    border-top: 1px solid #CEC5B9;
+    padding: 28px 0 35px;
 }
 
 .project-number {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
-    letter-spacing: 1.5px;
-    color: #8B8177;
     font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8A8177;
 }
 
 .project-name {
     font-family: 'Playfair Display', serif;
-    font-size: 43px;
-    line-height: 1;
+    font-size: 42px;
     margin-top: 8px;
-    margin-bottom: 12px;
 }
 
-.project-type {
+.project-tag {
     display: inline-block;
+
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 1.5px;
     font-weight: 700;
+    letter-spacing: 1.5px;
+
     padding: 6px 9px;
-    border: 1px solid #BDB4A9;
-    margin-bottom: 17px;
+
+    border: 1px solid #BBB2A7;
+
+    margin: 5px 0 17px;
 }
 
 .project-description {
@@ -336,55 +303,52 @@ header {
     font-size: 14px;
     line-height: 1.7;
     color: #625B53;
-    max-width: 520px;
 }
 
 .project-role {
     font-family: 'DM Sans', sans-serif;
     font-size: 12px;
     line-height: 1.7;
+
     color: #302D2A;
+
     margin-top: 20px;
 }
 
-.project-role-title {
-    font-family: 'DM Sans', sans-serif;
+.role-label {
     font-size: 9px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.5px;
     font-weight: 700;
     color: #82786E;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 
-/* =====================================================
-   ABOUT
-===================================================== */
+/* ABOUT */
 
-.about-section {
-    margin-top: 115px;
+.about {
+    margin-top: 120px;
 }
 
-.about-big {
+.about-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-size: 39px;
     line-height: 1.2;
 }
 
-.about-big em {
+.about-heading em {
     font-style: italic;
 }
 
-.about-body {
+.about-copy {
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     line-height: 1.85;
     color: #5D5750;
 }
 
-.about-body strong {
+.about-copy strong {
     color: #24211E;
-    font-weight: 600;
 }
 
 .about-side {
@@ -392,23 +356,23 @@ header {
     padding-left: 35px;
 }
 
-.about-side-label {
+.side-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
+    font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    font-weight: 700;
     color: #82786E;
 }
 
-.about-side-title {
+.side-title {
     font-family: 'Playfair Display', serif;
-    font-size: 31px;
+    font-size: 30px;
     line-height: 1.2;
-    margin-top: 13px;
+    margin-top: 14px;
 }
 
-.about-side-copy {
+.side-copy {
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     line-height: 1.7;
@@ -417,54 +381,54 @@ header {
 }
 
 
-/* =====================================================
-   THINKING
-===================================================== */
+/* THINKING */
 
-.thinking-section {
-    margin-top: 115px;
+.thinking {
+    margin-top: 120px;
+
     padding: 60px 0;
+
     border-top: 1px solid #CEC5B9;
     border-bottom: 1px solid #CEC5B9;
 }
 
-.thinking-intro {
+.thinking-title {
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     line-height: 1.2;
 }
 
-.thinking-intro em {
+.thinking-title em {
     font-style: italic;
 }
 
 .thinking-step {
     padding: 18px 0;
+
     border-bottom: 1px solid #D8D0C5;
+
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     line-height: 1.6;
 }
 
-.thinking-step span {
+.thinking-number {
+    color: #8A8177;
     font-size: 10px;
     letter-spacing: 1px;
-    color: #8A8177;
     margin-right: 10px;
 }
 
 
-/* =====================================================
-   TOOLKIT
-===================================================== */
+/* TOOLKIT */
 
-.toolkit-section {
+.toolkit {
     margin-top: 110px;
 }
 
 .toolkit-box {
     border-top: 1px solid #CEC5B9;
-    padding: 23px 0 28px 0;
+    padding: 23px 0 28px;
 }
 
 .toolkit-label {
@@ -476,39 +440,40 @@ header {
     color: #81776D;
 }
 
-.toolkit-content {
+.toolkit-text {
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     margin-top: 9px;
-    color: #37332F;
 }
 
 
-/* =====================================================
-   CONTACT
-===================================================== */
+/* CONTACT */
 
-.contact-section {
+.contact {
     background: #191817;
+
     color: #F5F1EB;
+
     margin-top: 110px;
-    padding: 70px 65px;
+
+    padding: 70px 60px;
 }
 
 .contact-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 700;
     color: #AAA39A;
 }
 
 .contact-title {
     font-family: 'Playfair Display', serif;
-    font-size: 57px;
-    line-height: 1.02;
+    font-size: 55px;
+    line-height: 1.03;
+
     margin-top: 15px;
 }
 
@@ -521,21 +486,24 @@ header {
     font-size: 14px;
     line-height: 1.7;
     color: #C7C0B8;
-    max-width: 500px;
-    margin-top: 25px;
+
+    max-width: 520px;
+
+    margin-top: 23px;
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 .footer {
-    border-top: 1px solid #CFC6BA;
+    border-top: 1px solid #CEC5B9;
+
     margin-top: 45px;
     padding-top: 20px;
+
     display: flex;
     justify-content: space-between;
+
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     letter-spacing: 1px;
@@ -543,23 +511,12 @@ header {
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
-    .block-container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .hero {
-        padding: 55px 0;
-    }
-
     .hero-title {
-        font-size: 58px;
+        font-size: 55px;
         letter-spacing: -2px;
     }
 
@@ -567,19 +524,19 @@ header {
         font-size: 18px;
     }
 
-    .section-heading {
+    .section-title {
         font-size: 40px;
     }
 
     .project-name {
-        font-size: 37px;
+        font-size: 36px;
     }
 
     .visual-title {
-        font-size: 40px;
+        font-size: 39px;
     }
 
-    .about-section {
+    .about {
         margin-top: 80px;
     }
 
@@ -587,16 +544,16 @@ header {
         margin-top: 40px;
     }
 
-    .thinking-section {
+    .thinking {
         margin-top: 80px;
     }
 
-    .contact-section {
+    .contact {
         padding: 45px 28px;
     }
 
     .contact-title {
-        font-size: 43px;
+        font-size: 42px;
     }
 
     .footer {
@@ -614,14 +571,14 @@ header {
 # NAVIGATION
 # =========================================================
 
-render_html("""
+st.html("""
 <div class="navbar">
 
-    <div class="nav-logo">
+    <div class="logo">
         KT.
     </div>
 
-    <div class="nav-text">
+    <div class="nav-right">
         MARKETING · BRAND · DIGITAL
     </div>
 
@@ -637,11 +594,11 @@ left, right = st.columns([1.65, 0.75], gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="hero">
 
-        <div class="hero-kicker">
-            PGDM Marketing · New Delhi · 2026
+        <div class="kicker">
+            PGDM MARKETING · NEW DELHI · 2026
         </div>
 
         <div class="hero-title">
@@ -662,7 +619,7 @@ with left:
             that have a reason to exist.
         </div>
 
-        <div class="hero-rule"></div>
+        <div class="hero-line"></div>
 
     </div>
     """)
@@ -686,7 +643,7 @@ with left:
 
 with right:
 
-    render_html("""
+    st.html("""
     <div class="profile-card">
     """)
 
@@ -695,50 +652,50 @@ with right:
         use_container_width=True
     )
 
-    render_html("""
+    st.html("""
     </div>
 
     <div class="profile-caption">
-        Kanushi Taneja · Marketing
+        KANUSHI TANEJA · MARKETING
     </div>
     """)
 
 
 # =========================================================
-# PROOF
+# PROOF STRIP
 # =========================================================
 
-render_html("""
-<div class="proof-strip">
+st.html("""
+<div class="proof">
 """)
 
 p1, p2, p3, p4 = st.columns(4)
 
 with p1:
-    render_html("""
+    st.html("""
     <div class="proof-number">4</div>
     <div class="proof-label">Internship Experiences</div>
     """)
 
 with p2:
-    render_html("""
+    st.html("""
     <div class="proof-number">30+</div>
     <div class="proof-label">Consumer Interviews</div>
     """)
 
 with p3:
-    render_html("""
+    st.html("""
     <div class="proof-number">6+</div>
     <div class="proof-label">Insurance Brands Analysed</div>
     """)
 
 with p4:
-    render_html("""
+    st.html("""
     <div class="proof-number">4</div>
     <div class="proof-label">Featured Projects</div>
     """)
 
-render_html("""
+st.html("""
 </div>
 """)
 
@@ -747,14 +704,14 @@ render_html("""
 # SELECTED WORK
 # =========================================================
 
-render_html("""
+st.html("""
 <div>
 
     <div class="section-label">
-        01 — Selected Work
+        01 — SELECTED WORK
     </div>
 
-    <div class="section-heading">
+    <div class="section-title">
         Ideas I've built.
     </div>
 
@@ -763,20 +720,20 @@ render_html("""
 
 
 # =========================================================
-# PROJECT 01 — AGRAMI
+# AGRAMI
 # =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="project-visual agrami">
 
         <div>
 
             <div class="visual-label">
-                Live FMCG Project
+                LIVE FMCG PROJECT
             </div>
 
             <div class="visual-title">
@@ -791,8 +748,8 @@ with left:
 
 with right:
 
-    render_html("""
-    <div class="project-card">
+    st.html("""
+    <div class="project">
 
         <div class="project-number">
             01 / 04
@@ -802,7 +759,7 @@ with right:
             AGRAMI
         </div>
 
-        <div class="project-type">
+        <div class="project-tag">
             LIVE PROJECT
         </div>
 
@@ -814,7 +771,7 @@ with right:
 
         <div class="project-role">
 
-            <div class="project-role-title">
+            <div class="role-label">
                 MY CONTRIBUTION
             </div>
 
@@ -830,20 +787,20 @@ with right:
 
 
 # =========================================================
-# PROJECT 02 — NYKAA
+# NYKAA
 # =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="project-visual nykaa">
 
         <div>
 
             <div class="visual-label">
-                Speculative Campaign
+                SPECULATIVE CAMPAIGN
             </div>
 
             <div class="visual-title">
@@ -858,8 +815,8 @@ with left:
 
 with right:
 
-    render_html("""
-    <div class="project-card">
+    st.html("""
+    <div class="project">
 
         <div class="project-number">
             02 / 04
@@ -869,20 +826,20 @@ with right:
             NYKAA
         </div>
 
-        <div class="project-type">
+        <div class="project-tag">
             SPEC CAMPAIGN
         </div>
 
         <div class="project-description">
             A social campaign built around the idea that beauty
-            knowledge is passed from one person to another —
+            knowledge travels from one person to another —
             turning that behaviour into a community-led
             content platform.
         </div>
 
         <div class="project-role">
 
-            <div class="project-role-title">
+            <div class="role-label">
                 MY CONTRIBUTION
             </div>
 
@@ -898,20 +855,20 @@ with right:
 
 
 # =========================================================
-# PROJECT 03 — FAE
+# FAE
 # =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="project-visual fae">
 
         <div>
 
             <div class="visual-label">
-                Beauty Campaign Concept
+                BEAUTY CAMPAIGN CONCEPT
             </div>
 
             <div class="visual-title">
@@ -926,8 +883,8 @@ with left:
 
 with right:
 
-    render_html("""
-    <div class="project-card">
+    st.html("""
+    <div class="project">
 
         <div class="project-number">
             03 / 04
@@ -937,7 +894,7 @@ with right:
             FAE BEAUTY
         </div>
 
-        <div class="project-type">
+        <div class="project-tag">
             CAMPAIGN CONCEPT
         </div>
 
@@ -950,7 +907,7 @@ with right:
 
         <div class="project-role">
 
-            <div class="project-role-title">
+            <div class="role-label">
                 PROJECT FOCUS
             </div>
 
@@ -966,20 +923,20 @@ with right:
 
 
 # =========================================================
-# PROJECT 04 — COIL
+# COIL
 # =========================================================
 
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="project-visual coil">
 
         <div>
 
             <div class="visual-label">
-                International Research
+                INTERNATIONAL RESEARCH
             </div>
 
             <div class="visual-title">
@@ -995,8 +952,8 @@ with left:
 
 with right:
 
-    render_html("""
-    <div class="project-card">
+    st.html("""
+    <div class="project">
 
         <div class="project-number">
             04 / 04
@@ -1006,7 +963,7 @@ with right:
             COIL
         </div>
 
-        <div class="project-type">
+        <div class="project-tag">
             RESEARCH PROJECT
         </div>
 
@@ -1019,7 +976,7 @@ with right:
 
         <div class="project-role">
 
-            <div class="project-role-title">
+            <div class="role-label">
                 MY ROLE
             </div>
 
@@ -1039,11 +996,11 @@ with right:
 # ABOUT ME
 # =========================================================
 
-render_html("""
-<div class="about-section">
+st.html("""
+<div class="about">
 
     <div class="section-label">
-        02 — About Me
+        02 — ABOUT ME
     </div>
 
 </div>
@@ -1053,17 +1010,15 @@ left, right = st.columns([1.1, 0.9], gap="large")
 
 with left:
 
-    render_html("""
-    <div class="about-big">
-
+    st.html("""
+    <div class="about-heading">
         Curious about people.<br>
         Serious about <em>ideas.</em>
-
     </div>
 
     <div style="height:28px;"></div>
 
-    <div class="about-body">
+    <div class="about-copy">
 
         I'm currently pursuing my <strong>PGDM in Marketing</strong>,
         while building hands-on experience across marketing
@@ -1089,19 +1044,19 @@ with left:
 
 with right:
 
-    render_html("""
+    st.html("""
     <div class="about-side">
 
-        <div class="about-side-label">
-            What I bring to a brief
+        <div class="side-label">
+            WHAT I BRING TO A BRIEF
         </div>
 
-        <div class="about-side-title">
+        <div class="side-title">
             A balance of<br>
             <em>thinking + doing.</em>
         </div>
 
-        <div class="about-side-copy">
+        <div class="side-copy">
             Research enough to understand the problem.
             Think enough to find the opportunity.
             Create enough to make the idea tangible.
@@ -1115,16 +1070,16 @@ with right:
 # HOW I THINK
 # =========================================================
 
-render_html("""
-<div class="thinking-section">
+st.html("""
+<div class="thinking">
 
     <div class="section-label">
-        03 — How I Think
+        03 — HOW I THINK
     </div>
 
     <div style="height:12px;"></div>
 
-    <div class="thinking-intro">
+    <div class="thinking-title">
         I don't start with the campaign.<br>
         I start with the <em>tension.</em>
     </div>
@@ -1133,41 +1088,25 @@ render_html("""
 """)
 
 steps = [
-    (
-        "01",
-        "OBSERVE",
-        "Understand the consumer, category and context."
-    ),
-    (
-        "02",
-        "FIND THE TENSION",
-        "Look for the behaviour, contradiction or unmet need."
-    ),
-    (
-        "03",
-        "BUILD THE IDEA",
-        "Turn the observation into a clear strategic platform."
-    ),
-    (
-        "04",
-        "MAKE IT SOCIAL",
-        "Translate the idea into content people can understand and participate in."
-    ),
-    (
-        "05",
-        "MEASURE",
-        "Define what success should look like."
-    )
+    ("01", "OBSERVE", "Understand the consumer, category and context."),
+    ("02", "FIND THE TENSION", "Look for the behaviour, contradiction or unmet need."),
+    ("03", "BUILD THE IDEA", "Turn the observation into a clear strategic platform."),
+    ("04", "MAKE IT SOCIAL", "Translate the idea into content people can understand and participate in."),
+    ("05", "MEASURE", "Define what success should look like.")
 ]
 
 for number, title, description in steps:
 
-    render_html(f"""
+    st.html(f"""
     <div class="thinking-step">
 
-        <span>{number}</span>
+        <span class="thinking-number">
+            {number}
+        </span>
 
-        <strong>{title}</strong>
+        <strong>
+            {title}
+        </strong>
 
         &nbsp; — &nbsp;
 
@@ -1181,14 +1120,14 @@ for number, title, description in steps:
 # TOOLKIT
 # =========================================================
 
-render_html("""
-<div class="toolkit-section">
+st.html("""
+<div class="toolkit">
 
     <div class="section-label">
-        04 — Marketing Toolkit
+        04 — MARKETING TOOLKIT
     </div>
 
-    <div class="section-heading">
+    <div class="section-title">
         What I work with.
     </div>
 
@@ -1199,14 +1138,14 @@ left, right = st.columns(2, gap="large")
 
 with left:
 
-    render_html("""
+    st.html("""
     <div class="toolkit-box">
 
         <div class="toolkit-label">
-            Strategy
+            STRATEGY
         </div>
 
-        <div class="toolkit-content">
+        <div class="toolkit-text">
             Brand Strategy · Campaign Planning ·
             Consumer Insights · Positioning ·
             Marketing Communications
@@ -1217,10 +1156,10 @@ with left:
     <div class="toolkit-box">
 
         <div class="toolkit-label">
-            Content
+            CONTENT
         </div>
 
-        <div class="toolkit-content">
+        <div class="toolkit-text">
             Content Strategy · Social Media Strategy ·
             Creative Strategy · Influencer Marketing ·
             PR & Community
@@ -1231,14 +1170,14 @@ with left:
 
 with right:
 
-    render_html("""
+    st.html("""
     <div class="toolkit-box">
 
         <div class="toolkit-label">
-            Research
+            RESEARCH
         </div>
 
-        <div class="toolkit-content">
+        <div class="toolkit-text">
             Market Research · Competitor Analysis ·
             Qualitative Research · Focus Group Discussions
         </div>
@@ -1248,10 +1187,10 @@ with right:
     <div class="toolkit-box">
 
         <div class="toolkit-label">
-            Tools
+            TOOLS
         </div>
 
-        <div class="toolkit-content">
+        <div class="toolkit-text">
             Canva · MS PowerPoint · MS Excel ·
             Google Workspace · GitHub
         </div>
@@ -1264,11 +1203,11 @@ with right:
 # CONTACT
 # =========================================================
 
-render_html("""
-<div class="contact-section">
+st.html("""
+<div class="contact">
 
     <div class="contact-label">
-        05 — Let's Connect
+        05 — LET'S CONNECT
     </div>
 
     <div class="contact-title">
@@ -1312,7 +1251,7 @@ with c3:
 # FOOTER
 # =========================================================
 
-render_html("""
+st.html("""
 <div class="footer">
 
     <div>
