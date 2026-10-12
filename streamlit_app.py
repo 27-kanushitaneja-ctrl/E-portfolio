@@ -295,14 +295,17 @@ p {
 
 /* PROJECT IMAGES */
 
-.stImage img {
-    display: block;
+div[data-testid="stImage"] {
     width: 100%;
-    border-radius: 2px;
+    margin-bottom: 0;
 }
 
-div[data-testid="stImage"] {
-    margin-bottom: 0;
+div[data-testid="stImage"] img {
+    display: block;
+    width: 100%;
+    height: 315px;
+    object-fit: cover;
+    border-radius: 2px;
 }
 
 /* PROJECT INFORMATION */
@@ -1078,15 +1081,15 @@ with right:
 
    
 st.link_button(
-    "EXPLORE PROJECT & CREATIVES →",
+    "EXPLORE PROJECT & CREATIVES ↗",
     "https://github.com/27-kanushitaneja-ctrl/SuperDrinks-Live-Project",
-    use_container_width=True
+    use_container_width=False
 )
 
 st.link_button(
-    "VISIT BRAND WEBSITE →",
+    "VISIT BRAND WEBSITE ↗",
     "https://superdrinks.in/",
-    use_container_width=True
+    use_container_width=False
 )
 
 
