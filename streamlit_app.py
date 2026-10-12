@@ -29,31 +29,36 @@ COIL = "https://github.com/27-kanushitaneja-ctrl/COIL-International-Insights"
 st.html("""
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+    --cream: #F7F3ED;
+    --paper: #FCFAF7;
+    --ink: #28221F;
+    --muted: #766B62;
+    --line: #DED3C7;
+    --burgundy: #773C48;
+    --blush: #EADCD8;
+    --sand: #E7DED2;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    background: #F5F1EB;
-}
-
+body,
 .stApp {
-    background: #F5F1EB;
-    color: #191817;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
 }
 
 .block-container {
-    max-width: 1180px;
-    padding-top: 25px;
-    padding-bottom: 80px;
+    max-width: 1160px;
+    padding: 28px 34px 70px;
 }
 
-#MainMenu {
-    visibility: hidden;
-}
-
+#MainMenu,
 footer {
     visibility: hidden;
 }
@@ -62,6 +67,9 @@ header {
     background: transparent !important;
 }
 
+p {
+    color: var(--muted);
+}
 
 /* NAVIGATION */
 
@@ -70,513 +78,420 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 12px 0 22px;
-
-    border-bottom: 1px solid #D5CDC2;
+    gap: 20px;
+    padding: 15px 0 23px;
+    border-bottom: 1px solid var(--line);
 }
 
 .logo {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--burgundy);
+    letter-spacing: -1px;
 }
 
 .nav-right {
-    font-family: 'DM Sans', sans-serif;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
-    color: #766E65;
+    color: var(--muted);
 }
-
 
 /* HERO */
 
 .hero {
-    padding: 75px 0 45px;
+    padding: 75px 0 35px;
 }
 
-.kicker {
+.kicker,
+.section-label,
+.contact-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 2.1px;
     text-transform: uppercase;
-    color: #7D746A;
-    margin-bottom: 25px;
+    color: var(--burgundy);
+}
+
+.kicker {
+    margin-bottom: 24px;
 }
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 82px;
-    line-height: .94;
-    letter-spacing: -4px;
-    font-weight: 500;
+    font-size: clamp(52px, 6.3vw, 80px);
+    line-height: 1.02;
+    letter-spacing: -2.8px;
+    font-weight: 400;
+    color: var(--ink);
 }
 
-.hero-title em {
-    font-style: italic;
+.hero-title em,
+.about-heading em,
+.thinking-title em,
+.contact-title em,
+.visual-title em {
+    color: var(--burgundy);
+    font-weight: 400;
 }
 
 .hero-intro {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #48433D;
-    max-width: 700px;
-    margin-top: 32px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #51463F;
+    max-width: 660px;
+    margin-top: 28px;
 }
 
-.hero-intro strong {
-    color: #191817;
+.hero-intro strong,
+.about-copy strong {
+    color: var(--ink);
+    font-weight: 600;
 }
 
 .hero-detail {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #746D65;
-    max-width: 650px;
-    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 600px;
+    margin-top: 15px;
 }
 
 .hero-line {
-    width: 70px;
+    width: 58px;
     height: 2px;
-    background: #191817;
-    margin-top: 35px;
+    background: var(--burgundy);
+    margin-top: 30px;
 }
-
 
 /* PROFILE */
 
 .profile-card {
-    background: #DDD6CC;
-    padding: 12px;
-    margin-top: 65px;
+    background: var(--sand);
+    padding: 10px;
+    margin-top: 70px;
+    border: 1px solid #D8CBBE;
+}
+
+.profile-card img {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
 }
 
 .profile-caption {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.7px;
     text-transform: uppercase;
-    color: #81786E;
-    margin-top: 12px;
+    color: var(--muted);
+    margin-top: 13px;
 }
 
+/* BUTTONS */
 
-/* PROOF */
+.stLinkButton a {
+    border: 1px solid #C7B5A8 !important;
+    border-radius: 2px !important;
+    background: transparent !important;
+    color: var(--burgundy) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.1px !important;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.stLinkButton a:hover {
+    background: var(--burgundy) !important;
+    color: #FFFFFF !important;
+    border-color: var(--burgundy) !important;
+}
+
+/* STATISTICS */
 
 .proof {
-    border-top: 1px solid #D1C8BC;
-    border-bottom: 1px solid #D1C8BC;
-
-    padding: 28px 0;
-
-    margin: 20px 0 100px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    margin: 20px 0 80px;
 }
 
 .proof-number {
     font-family: 'Playfair Display', serif;
-    font-size: 34px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--burgundy);
 }
 
 .proof-label {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
-    letter-spacing: 1.5px;
+    line-height: 1.6;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
-    color: #81786E;
+    color: var(--muted);
     margin-top: 7px;
 }
 
-
-/* SECTIONS */
+/* SECTION HEADINGS */
 
 .section-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    color: #83796E;
     margin-bottom: 13px;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    line-height: 1;
-    font-weight: 500;
-    margin-bottom: 45px;
+    font-size: clamp(38px, 4.2vw, 50px);
+    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+    color: var(--ink);
+    margin-bottom: 38px;
 }
-
 
 /* PROJECT VISUALS */
 
 .project-visual {
-    height: 315px;
-
+    min-height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 40px;
+    padding: 35px;
+    border: 1px solid rgba(80, 60, 50, 0.08);
 }
 
 .agrami {
-    background: #D8D0C1;
+    background: #E7DED0;
 }
 
 .nykaa {
-    background: #E7D9D8;
+    background: #EADBD9;
 }
 
 .fae {
-    background: #DDD8D0;
+    background: #E4DED7;
 }
 
 .coil {
-    background: #D8DCE0;
+    background: #DFE1DF;
 }
 
 .visual-label {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    color: var(--burgundy);
+    margin-bottom: 16px;
 }
 
 .visual-title {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    line-height: .95;
+    font-size: 46px;
+    line-height: 1.02;
+    color: var(--ink);
 }
 
-.visual-title em {
-    font-style: italic;
+/* PROJECT IMAGES */
+
+.stImage img {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
 }
 
+div[data-testid="stImage"] {
+    margin-bottom: 0;
+}
 
-/* PROJECT INFO */
+/* PROJECT INFORMATION */
 
 .project {
-    border-top: 1px solid #CEC5B9;
-    padding: 28px 0 35px;
+    border-top: 1px solid var(--line);
+    padding: 25px 0 30px;
 }
 
 .project-number {
-    font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #8A8177;
+    letter-spacing: 1.7px;
+    color: var(--burgundy);
 }
 
 .project-name {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: clamp(32px, 3.5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    color: var(--ink);
     margin-top: 8px;
 }
 
 .project-tag {
     display: inline-block;
-
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-
+    letter-spacing: 1.2px;
+    color: var(--burgundy);
     padding: 6px 9px;
-
-    border: 1px solid #BBB2A7;
-
-    margin: 5px 0 17px;
+    border: 1px solid #CDB6B0;
+    margin: 12px 0 16px;
 }
 
 .project-description {
-    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    line-height: 1.7;
-    color: #625B53;
+    line-height: 1.85;
+    color: #655A51;
 }
 
 .project-role {
-    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
-    line-height: 1.7;
-
-    color: #302D2A;
-
-    margin-top: 20px;
+    line-height: 1.8;
+    color: #39312D;
+    margin-top: 19px;
 }
 
 .role-label {
     font-size: 9px;
     letter-spacing: 1.5px;
     font-weight: 700;
-    color: #82786E;
-    margin-bottom: 3px;
+    color: var(--burgundy);
+    margin-bottom: 6px;
 }
-
 
 /* ABOUT */
 
 .about {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .about-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 39px;
-    line-height: 1.2;
-}
-
-.about-heading em {
-    font-style: italic;
+    font-size: clamp(32px, 3.5vw, 40px);
+    line-height: 1.25;
+    color: var(--ink);
 }
 
 .about-copy {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.85;
-    color: #5D5750;
-}
-
-.about-copy strong {
-    color: #24211E;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #655A51;
 }
 
 .about-side {
-    border-left: 1px solid #CFC6BA;
-    padding-left: 35px;
+    border-left: 2px solid #D4B7B1;
+    padding: 8px 0 8px 28px;
 }
 
 .side-label {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    color: #82786E;
+    color: var(--burgundy);
 }
 
 .side-title {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 29px;
+    line-height: 1.3;
+    color: var(--ink);
     margin-top: 14px;
 }
 
-.side-copy {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    line-height: 1.7;
-    color: #6F675F;
-    margin-top: 18px;
+.side-title em {
+    color: var(--burgundy);
 }
 
+.side-copy {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-top: 16px;
+}
 
-/* THINKING */
+/* HOW I THINK */
 
 .thinking {
-    margin-top: 120px;
-
-    padding: 60px 0;
-
-    border-top: 1px solid #CEC5B9;
-    border-bottom: 1px solid #CEC5B9;
+    margin-top: 100px;
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .thinking-title {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    line-height: 1.2;
-}
-
-.thinking-title em {
-    font-style: italic;
+    font-size: clamp(31px, 3.5vw, 40px);
+    line-height: 1.3;
+    color: var(--ink);
 }
 
 .thinking-step {
-    padding: 18px 0;
-
-    border-bottom: 1px solid #D8D0C5;
-
-    font-family: 'DM Sans', sans-serif;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--line);
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #655A51;
+}
+
+.thinking-step:last-child {
+    border-bottom: none;
+}
+
+.thinking-step strong {
+    color: var(--ink);
+    font-weight: 700;
 }
 
 .thinking-number {
-    color: #8A8177;
+    color: var(--burgundy);
     font-size: 10px;
+    font-weight: 700;
     letter-spacing: 1px;
     margin-right: 10px;
 }
 
-
-/* TOOLKIT */
+/* MARKETING TOOLKIT */
 
 .toolkit {
-    margin-top: 110px;
+    margin-top: 90px;
 }
 
 .toolkit-box {
-    border-top: 1px solid #CEC5B9;
-    padding: 23px 0 28px;
+    border-top: 1px solid var(--line);
+    padding: 22px 0 26px;
 }
 
 .toolkit-label {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    color: #81776D;
+    color: var(--burgundy);
 }
 
 .toolkit-text {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #51463F;
     margin-top: 9px;
 }
 
-
-/* CONTACT */
-
-.contact {
-    background: #191817;
-
-    color: #F5F1EB;
-
-    margin-top: 110px;
-
-    padding: 70px 60px;
-}
-
-.contact-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #AAA39A;
-}
-
-.contact-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 55px;
-    line-height: 1.03;
-
-    margin-top: 15px;
-}
-
-.contact-title em {
-    font-style: italic;
-}
-
-.contact-copy {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #C7C0B8;
-
-    max-width: 520px;
-
-    margin-top: 23px;
-}
-
-
-/* FOOTER */
-
-.footer {
-    border-top: 1px solid #CEC5B9;
-
-    margin-top: 45px;
-    padding-top: 20px;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: #82786E;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .hero-title {
-        font-size: 55px;
-        letter-spacing: -2px;
-    }
-
-    .hero-intro {
-        font-size: 18px;
-    }
-
-    .section-title {
-        font-size: 40px;
-    }
-
-    .project-name {
-        font-size: 36px;
-    }
-
-    .visual-title {
-        font-size: 39px;
-    }
-
-    .about {
-        margin-top: 80px;
-    }
-
-    .about-side {
-        margin-top: 40px;
-    }
-
-    .thinking {
-        margin-top: 80px;
-    }
-
-    .contact {
-        padding: 45px 28px;
-    }
-
-    .contact-title {
-        font-size: 42px;
-    }
-
-    .footer {
-        display: block;
-        line-height: 2;
-    }
-
-}
-
-/* INTERNSHIP EXPERIENCE CARDS */
+/* INTERNSHIP EXPERIENCE */
 
 .internship-card {
     display: grid;
-    grid-template-columns: 45px minmax(0, 1fr);
-    gap: 20px;
-    padding: 32px 0;
-    border-top: 1px solid #CEC5B9;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 19px;
+    padding: 29px 0;
+    border-top: 1px solid var(--line);
 }
 
 .internship-number {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    color: #A49A8E;
+    font-size: 29px;
+    color: #B29A91;
     line-height: 1.2;
 }
 
@@ -594,56 +509,218 @@ header {
 
 .internship-company {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 27px;
     line-height: 1.3;
-    color: #191817;
+    color: var(--ink);
     max-width: 750px;
 }
 
 .internship-date {
-    font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #82786E;
+    color: var(--burgundy);
     padding-top: 8px;
 }
 
 .internship-role {
-    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: #82786E;
-    margin-top: 8px;
+    color: var(--muted);
+    margin-top: 7px;
 }
 
 .internship-description {
-    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    line-height: 1.8;
-    color: #625B53;
+    line-height: 1.85;
+    color: #655A51;
     max-width: 800px;
-    margin-top: 18px;
+    margin-top: 16px;
 }
 
 .internship-tags {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 700;
     line-height: 1.8;
     letter-spacing: 1px;
-    color: #82786E;
-    margin-top: 16px;
+    color: var(--burgundy);
+    margin-top: 14px;
 }
 
+/* CONTACT */
+
+.contact {
+    background: var(--burgundy);
+    color: #FFFFFF;
+    margin-top: 90px;
+    padding: 58px 52px;
+}
+
+.contact-label {
+    color: #E8D5D0;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.5vw, 53px);
+    line-height: 1.12;
+    margin-top: 16px;
+    color: #FFFFFF;
+}
+
+.contact-title em {
+    color: #F0D8D1;
+}
+
+.contact-copy {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #F0E4E0;
+    max-width: 520px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+
+.footer {
+    border-top: 1px solid var(--line);
+    margin-top: 38px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+/* MOBILE */
+
 @media (max-width: 768px) {
+    .block-container {
+        padding: 18px 20px 45px;
+    }
+
+    .navbar {
+        align-items: flex-start;
+        padding-bottom: 17px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-right {
+        font-size: 8px;
+        letter-spacing: 1px;
+        text-align: right;
+        line-height: 1.7;
+    }
+
+    .hero {
+        padding: 48px 0 25px;
+    }
+
+    .hero-title {
+        font-size: clamp(43px, 10vw, 58px);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-intro {
+        font-size: 17px;
+    }
+
+    .profile-card {
+        margin-top: 15px;
+    }
+
+    .proof {
+        margin-bottom: 60px;
+        padding: 20px 0;
+    }
+
+    .proof-number {
+        font-size: 30px;
+    }
+
+    .proof-label {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .section-title {
+        font-size: 38px;
+        margin-bottom: 28px;
+    }
+
+    .project-visual {
+        min-height: 245px;
+        padding: 25px;
+    }
+
+    .visual-title {
+        font-size: 38px;
+    }
+
+    .project-name {
+        font-size: 34px;
+    }
+
+    .about,
+    .toolkit {
+        margin-top: 70px;
+    }
+
+    .about-side {
+        margin-top: 30px;
+        padding-left: 20px;
+    }
+
+    .thinking {
+        margin-top: 70px;
+        padding: 35px 0;
+    }
+
+    .thinking-title {
+        font-size: 31px;
+    }
+
     .internship-card {
         grid-template-columns: 30px minmax(0, 1fr);
         gap: 12px;
+        padding: 24px 0;
+    }
+
+    .internship-number {
+        font-size: 24px;
     }
 
     .internship-company {
         font-size: 23px;
+    }
+
+    .contact {
+        margin-top: 65px;
+        padding: 38px 25px;
+    }
+
+    .contact-title {
+        font-size: 37px;
+    }
+
+    .footer {
+        display: block;
+        line-height: 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
     }
 }
 
