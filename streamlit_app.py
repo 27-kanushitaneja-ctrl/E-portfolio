@@ -972,25 +972,10 @@ st.link_button(
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-
-    st.html("""
-    <div class="project-visual agrami">
-
-        <div>
-
-            <div class="visual-label">
-                LIVE FMCG PROJECT
-            </div>
-
-            <div class="visual-title">
-                From farm<br>
-                <em>to you.</em>
-            </div>
-
-        </div>
-
-    </div>
-    """)
+    st.image(
+        "agrami.png",
+        use_container_width=True
+    )
 
 with right:
 
@@ -1039,25 +1024,10 @@ with right:
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-
-    st.html("""
-    <div class="project-visual nykaa">
-
-        <div>
-
-            <div class="visual-label">
-                SPECULATIVE CAMPAIGN
-            </div>
-
-            <div class="visual-title">
-                Who<br>
-                <em>taught you?</em>
-            </div>
-
-        </div>
-
-    </div>
-    """)
+    st.image(
+        "nykaa.png",
+        use_container_width=True
+    )
 
 with right:
 
@@ -1107,25 +1077,10 @@ with right:
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-
-    st.html("""
-    <div class="project-visual fae">
-
-        <div>
-
-            <div class="visual-label">
-                BEAUTY CAMPAIGN CONCEPT
-            </div>
-
-            <div class="visual-title">
-                FAE<br>
-                <em>Your Way.</em>
-            </div>
-
-        </div>
-
-    </div>
-    """)
+    st.image(
+        "fae.png",
+        use_container_width=True
+    )
 
 with right:
 
