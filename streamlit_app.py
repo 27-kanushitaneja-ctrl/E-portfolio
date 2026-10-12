@@ -971,10 +971,19 @@ with right:
     </div>
     """)
 
-    st.link_button(
-        "VISIT SUPERDRINKS WEBSITE →",
-        "https://superdrinks.in/"
-    )
+   
+st.link_button(
+    "EXPLORE PROJECT & CREATIVES →",
+    "https://github.com/27-kanushitaneja-ctrl/SuperDrinks-Live-Project",
+    use_container_width=True
+)
+
+st.link_button(
+    "VISIT BRAND WEBSITE →",
+    "https://superdrinks.in/",
+    use_container_width=True
+)
+
 
 
 # =========================================================
