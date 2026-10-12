@@ -827,33 +827,75 @@ with right:
 # =========================================================
 
 st.html("""
-<div class="proof">
-""")
+<div style="
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    margin:35px 0 75px;
+    background:#F0E7DF;
+    border:1px solid #DED0C5;
+">
 
-p1, p3, p4 = st.columns(3)
+    <div style="padding:27px 24px;border-right:1px solid #D8C7BC;">
+        <div style="
+            font-family:'Playfair Display',serif;
+            font-size:36px;
+            color:#773C48;
+            line-height:1.1;
+        ">04</div>
+        <div style="
+            font-family:'DM Sans',sans-serif;
+            font-size:9px;
+            letter-spacing:1.3px;
+            line-height:1.7;
+            color:#766B62;
+            margin-top:10px;
+        ">INTERNSHIP EXPERIENCES</div>
+    </div>
 
-with p1:
-    st.html("""
-    <div class="proof-number">4</div>
-    <div class="proof-label">Internship Experiences</div>
-    """)
+    <div style="padding:27px 24px;border-right:1px solid #D8C7BC;">
+        <div style="
+            font-family:'Playfair Display',serif;
+            font-size:36px;
+            color:#773C48;
+            line-height:1.1;
+        ">06+</div>
+        <div style="
+            font-family:'DM Sans',sans-serif;
+            font-size:9px;
+            letter-spacing:1.3px;
+            line-height:1.7;
+            color:#766B62;
+            margin-top:10px;
+        ">INSURANCE BRANDS ANALYSED</div>
+    </div>
 
-with p3:
-    st.html("""
-    <div class="proof-number">6+</div>
-    <div class="proof-label">Insurance Brands Analysed</div>
-    """)
+    <div style="padding:27px 24px;">
+        <div style="
+            font-family:'Playfair Display',serif;
+            font-size:36px;
+            color:#773C48;
+            line-height:1.1;
+        ">05</div>
+        <div style="
+            font-family:'DM Sans',sans-serif;
+            font-size:9px;
+            letter-spacing:1.3px;
+            line-height:1.7;
+            color:#766B62;
+            margin-top:10px;
+        ">FEATURED PROJECTS</div>
+    </div>
 
-with p4:
-    st.html("""
-    <div class="proof-number">4</div>
-    <div class="proof-label">Featured Projects</div>
-    """)
-
-st.html("""
 </div>
-""")
 
+<style>
+@media (max-width:600px) {
+    div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns:1fr !important;
+    }
+}
+</style>
+""")
 
 # =========================================================
 # INTERNSHIP EXPERIENCE
