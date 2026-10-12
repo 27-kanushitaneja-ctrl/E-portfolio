@@ -829,8 +829,9 @@ with right:
 st.html("""
 <div style="
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    margin:35px 0 75px;
+grid-template-columns:repeat(3,minmax(0,1fr));
+max-width:900px;
+margin:25px auto 45px;
     background:#F0E7DF;
     border:1px solid #DED0C5;
 ">
@@ -902,7 +903,7 @@ st.html("""
 # =========================================================
 
 st.html("""
-<div style="margin-top:100px; margin-bottom:35px;">
+<div style="margin-top:35px; margin-bottom:30px;">
     <div class="section-label">01 — INTERNSHIP EXPERIENCE</div>
     <div class="section-title">Where I've learned by doing.</div>
     <p style="
