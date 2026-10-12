@@ -909,6 +909,73 @@ st.html("""
 </div>
 """)
 
+# =========================================================
+# SUPERDRINKS — PROJECT 01
+# =========================================================
+
+left, right = st.columns([1.05, 1], gap="large")
+
+with left:
+    st.html("""
+    <div class="project-visual agrami">
+        <div>
+            <div class="visual-label">
+                LIVE BRAND PROJECT
+            </div>
+
+            <div class="visual-title">
+                Super<br>
+                <em>Drinks.</em>
+            </div>
+
+            <div style="
+                font-family:'DM Sans',sans-serif;
+                font-size:10px;
+                letter-spacing:1.3px;
+                line-height:1.8;
+                margin-top:20px;
+            ">
+                BRAND STRATEGY · CAMPAIGNS<br>
+                CONSUMER ENGAGEMENT
+            </div>
+        </div>
+    </div>
+    """)
+
+with right:
+    st.html("""
+    <div class="project">
+
+        <div class="project-number">01 / 05</div>
+
+        <div class="project-name">SuperDrinks</div>
+
+        <div class="project-tag">LIVE PROJECT</div>
+
+        <div class="project-description">
+            A live brand marketing project exploring how
+            consumer insights, product occasions and creative
+            communication can create new opportunities for a
+            ready-to-drink beverage brand.
+        </div>
+
+        <div class="project-role">
+            <div class="role-label">MY CONTRIBUTION</div>
+
+            Brand audit and SWOT analysis · WhatsApp promotional
+            communication · Coffee 911 launch campaign concept ·
+            Proposed campus activation · The Crunch Match
+            collaboration pitch
+        </div>
+
+    </div>
+    """)
+
+    st.link_button(
+        "VISIT SUPERDRINKS WEBSITE →",
+        "https://superdrinks.in/"
+    )
+
 
 # =========================================================
 # AGRAMI
@@ -943,7 +1010,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            01 / 04
+            02 / 05
         </div>
 
         <div class="project-name">
@@ -1010,7 +1077,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            02 / 04
+            03 / 05
         </div>
 
         <div class="project-name">
@@ -1078,7 +1145,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            03 / 04
+            04 / 05
         </div>
 
         <div class="project-name">
@@ -1147,7 +1214,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            04 / 04
+            05 / 05
         </div>
 
         <div class="project-name">
