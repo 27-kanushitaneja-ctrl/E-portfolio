@@ -916,31 +916,10 @@ st.html("""
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.html("""
-    <div class="project-visual agrami">
-        <div>
-            <div class="visual-label">
-                LIVE BRAND PROJECT
-            </div>
-
-            <div class="visual-title">
-                Super<br>
-                <em>Drinks.</em>
-            </div>
-
-            <div style="
-                font-family:'DM Sans',sans-serif;
-                font-size:10px;
-                letter-spacing:1.3px;
-                line-height:1.8;
-                margin-top:20px;
-            ">
-                BRAND STRATEGY · CAMPAIGNS<br>
-                CONSUMER ENGAGEMENT
-            </div>
-        </div>
-    </div>
-    """)
+    st.image(
+        "superdrinks.png",
+        use_container_width=True
+    )
 
 with right:
     st.html("""
