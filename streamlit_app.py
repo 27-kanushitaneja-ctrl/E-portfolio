@@ -563,6 +563,90 @@ header {
 
 }
 
+/* INTERNSHIP EXPERIENCE CARDS */
+
+.internship-card {
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr);
+    gap: 20px;
+    padding: 32px 0;
+    border-top: 1px solid #CEC5B9;
+}
+
+.internship-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #A49A8E;
+    line-height: 1.2;
+}
+
+.internship-content {
+    min-width: 0;
+}
+
+.internship-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.internship-company {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1.3;
+    color: #191817;
+    max-width: 750px;
+}
+
+.internship-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #82786E;
+    padding-top: 8px;
+}
+
+.internship-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #82786E;
+    margin-top: 8px;
+}
+
+.internship-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #625B53;
+    max-width: 800px;
+    margin-top: 18px;
+}
+
+.internship-tags {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: #82786E;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .internship-card {
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .internship-company {
+        font-size: 23px;
+    }
+}
+
 </style>
 """)
 
@@ -699,6 +783,113 @@ st.html("""
 </div>
 """)
 
+
+# =========================================================
+# INTERNSHIP EXPERIENCE
+# =========================================================
+
+st.html("""
+<div style="margin-top:100px; margin-bottom:35px;">
+    <div class="section-label">01 — INTERNSHIP EXPERIENCE</div>
+    <div class="section-title">Where I've learned by doing.</div>
+    <p style="
+        font-family:'DM Sans',sans-serif;
+        font-size:15px;
+        line-height:1.7;
+        color:#746D65;
+        max-width:650px;
+        margin-top:-25px;
+    ">
+        Experiences that helped me connect research, communication
+        and consumer understanding with real-world work.
+    </p>
+</div>
+""")
+
+internships = [
+    {
+        "number": "01",
+        "company": "Aditya Birla Capital",
+        "role": "Marketing Communications Intern",
+        "date": "APR — JUL 2026",
+        "description": (
+            "Analysed 6+ insurance brands across four social platforms "
+            "and evaluated 100+ content pieces. Conducted 30+ consumer "
+            "interviews to understand audience needs and support "
+            "marketing communication planning."
+        ),
+        "tags": "COMPETITOR ANALYSIS · CONSUMER INSIGHTS · CONTENT STRATEGY"
+    },
+    {
+        "number": "02",
+        "company": "Office of the Chief Commissioner "
+                   "for Persons with Disabilities (CCPD)",
+        "role": "Research Intern",
+        "date": "JAN 2026",
+        "description": (
+            "Studied disability frameworks across 20 countries and "
+            "updated and verified the directory of State Commissioners "
+            "for Persons with Disabilities across 33 States and UTs. "
+            "Strengthened research, information verification and "
+            "analytical skills through policy-focused work."
+        ),
+        "tags": "POLICY RESEARCH · COMPARATIVE ANALYSIS · DATA VERIFICATION"
+    },
+    {
+        "number": "03",
+        "company": "Master's Buddy",
+        "role": "Marketing Intern",
+        "date": "JUL 2023",
+        "description": (
+            "Conducted competitor analysis across four brands to "
+            "understand their marketing and content approaches. "
+            "Identified content gaps and opportunities for "
+            "content optimisation."
+        ),
+        "tags": "COMPETITOR RESEARCH · CONTENT ANALYSIS · DIGITAL MARKETING"
+    }
+]
+
+for item in internships:
+    st.html(f"""
+    <div class="internship-card">
+
+        <div class="internship-number">
+            {item['number']}
+        </div>
+
+        <div class="internship-content">
+
+            <div class="internship-topline">
+                <div class="internship-company">
+                    {item['company']}
+                </div>
+
+                <div class="internship-date">
+                    {item['date']}
+                </div>
+            </div>
+
+            <div class="internship-role">
+                {item['role']}
+            </div>
+
+            <div class="internship-description">
+                {item['description']}
+            </div>
+
+            <div class="internship-tags">
+                {item['tags']}
+            </div>
+
+        </div>
+
+    </div>
+    """)
+
+st.html("""
+<div style="border-top:1px solid #CEC5B9; margin-bottom:75px;"></div>
+""")
 
 # =========================================================
 # SELECTED WORK
