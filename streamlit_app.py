@@ -739,7 +739,7 @@ st.html("""
 <div class="navbar">
 
     <div class="logo">
-        KT.
+        Kanushi Taneja
     </div>
 
     <div class="nav-right">
