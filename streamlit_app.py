@@ -753,18 +753,12 @@ st.html("""
 <div class="proof">
 """)
 
-p1, p2, p3, p4 = st.columns(4)
+p1, p3, p4 = st.columns(3)
 
 with p1:
     st.html("""
     <div class="proof-number">4</div>
     <div class="proof-label">Internship Experiences</div>
-    """)
-
-with p2:
-    st.html("""
-    <div class="proof-number">30+</div>
-    <div class="proof-label">Consumer Interviews</div>
     """)
 
 with p3:
@@ -835,8 +829,20 @@ internships = [
         ),
         "tags": "POLICY RESEARCH · COMPARATIVE ANALYSIS · DATA VERIFICATION"
     },
-    {
+       {
         "number": "03",
+        "company": "The Leading Solutions",
+        "role": "Marketing Intern",
+        "date": "JUL 2023 – OCT 2023",
+        "description": (
+            "Supported financial product marketing and lead nurturing "
+            "by following up with 10–15 client leads. Managed client "
+            "communication and assisted in policy-sales conversion."
+        ),
+        "tags": "FINANCIAL MARKETING · LEAD NURTURING · CLIENT ENGAGEMENT"
+    },
+    {
+        "number": "04",
         "company": "Master's Buddy",
         "role": "Marketing Intern",
         "date": "JUL 2023",
