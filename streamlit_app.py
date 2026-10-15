@@ -1146,6 +1146,7 @@ with right:
     st.link_button("VIEW PROJECT →", AGRAMI)
 
 
+
 # =====================================================
 # PROJECT 03 — ABSLI INSIGHTAI
 # =====================================================
@@ -1153,68 +1154,50 @@ with right:
 left, right = st.columns([1.05, 1], gap="large")
 
 with left:
-    st.markdown(
-        """
-        <div style="
-            background-color: #f3eee8;
-            padding: 35px;
-            border-radius: 12px;
-            min-height: 315px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        ">
-            <p style="
-                font-size: 12px;
-                letter-spacing: 2px;
-                color: #8b2635;
-            ">PROJECT 03 / 06</p>
-
-            <h1 style="
-                font-family: 'Playfair Display', serif;
-                font-size: 34px;
-                color: #3b2025;
-            ">ABSLI InsightAI</h1>
-
-            <p style="
-                font-size: 13px;
-                letter-spacing: 1px;
-                color: #66565a;
-            ">AI-POWERED MARKETING DASHBOARD</p>
-
-            <p style="font-size: 12px; color: #66565a;">
-                SENTIMENT ANALYSIS · CONSUMER INSIGHTS · AI STRATEGY
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    st.image(
+        "absli_insightai.png",
+        use_container_width=True
     )
 
 with right:
-    st.markdown("### ABSLI InsightAI")
-    st.caption("AI-Powered Marketing Communications Dashboard")
+    st.markdown(
+        """
+        <div class="project">
+            <div class="project-number">03 / 06</div>
 
-    st.write(
-        "A dashboard prototype exploring how AI can simplify social "
-        "media and competitor analysis, understand audience sentiment, "
-        "identify consumer segments, and turn engagement data into "
-        "useful marketing insights."
+            <div class="project-name">ABSLI InsightAI</div>
+
+            <div class="project-tag">
+                AI-Powered Marketing Communications Dashboard
+            </div>
+
+            <div class="project-description">
+                A dashboard prototype exploring how AI can simplify
+                social media and competitor analysis, understand audience
+                sentiment, identify consumer segments, and turn engagement
+                data into useful marketing insights.
+            </div>
+
+            <div class="project-role">
+                <strong>MY CONTRIBUTION</strong><br>
+                Conceptualised the dashboard workflow, structured the
+                marketing analytics modules, and developed the prototype
+                using Lovable, with ChatGPT supporting prompt development.
+            </div>
+
+            <div class="project-role">
+                <strong>TOOLS</strong><br>
+                Lovable · ChatGPT
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
     )
-
-    st.markdown("**MY CONTRIBUTION**")
-    st.write(
-        "Conceptualised the dashboard workflow, structured the marketing "
-        "analytics modules, and developed the prototype using Lovable, "
-        "with ChatGPT supporting prompt development."
-    )
-
-    st.markdown("**TOOLS**")
-    st.write("Lovable · ChatGPT")
 
 st.link_button(
     "EXPLORE LIVE DASHBOARD ↗",
     "https://marcom-insight-ai.lovable.app/",
-    use_container_width=False,
+    use_container_width=False
 )
 
 
