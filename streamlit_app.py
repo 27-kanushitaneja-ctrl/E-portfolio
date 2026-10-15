@@ -1159,35 +1159,63 @@ with left:
         use_container_width=True
     )
 
-
 with right:
-    st.markdown('<div class="project-number">03 / 06</div>', unsafe_allow_html=True)
-    st.markdown("## ABSLI InsightAI")
-    st.caption("AI-Powered Marketing Communications Dashboard")
+    st.html("""
+    <div class="project">
 
-    st.write(
-        "A dashboard prototype exploring how AI can simplify social "
-        "media and competitor analysis, understand audience sentiment, "
-        "identify consumer segments, and turn engagement data into "
-        "useful marketing insights."
+        <div class="project-number">
+            03 / 06
+        </div>
+
+        <div class="project-name">
+            ABSLI InsightAI
+        </div>
+
+        <div class="project-tag">
+            AI-POWERED MARKETING COMMUNICATIONS DASHBOARD
+        </div>
+
+        <div class="project-description">
+            An AI-powered dashboard prototype exploring how social media
+            and competitor data can be transformed into meaningful
+            marketing insights through content classification, sentiment
+            analysis, consumer segmentation and engagement analysis.
+        </div>
+
+        <div class="project-role">
+
+            <div class="role-label">
+                MY CONTRIBUTION
+            </div>
+
+            Conceptualised the dashboard workflow · Structured marketing
+            analytics modules · Developed the prototype using Lovable
+            with ChatGPT supporting prompt development
+
+        </div>
+
+        <div class="project-role">
+
+            <div class="role-label">
+                TOOLS
+            </div>
+
+            Lovable · ChatGPT
+
+        </div>
+
+    </div>
+    """)
+
+    st.link_button(
+        "EXPLORE LIVE DASHBOARD →",
+        "https://marcom-insight-ai.lovable.app/"
     )
 
-    st.markdown("**MY CONTRIBUTION**")
-    st.write(
-        "Conceptualised the dashboard workflow, structured the marketing "
-        "analytics modules, and developed the prototype using Lovable, "
-        "with ChatGPT supporting prompt development."
-    )
 
-    st.markdown("**TOOLS**")
-    st.write("Lovable · ChatGPT")
-
-st.link_button(
-    "EXPLORE LIVE DASHBOARD ↗",
-    "https://marcom-insight-ai.lovable.app/",
-    use_container_width=False
-)
-
+# =====================================================
+# PROJECT 04 — NYKAA
+# =====================================================
 
 
 # =====================================================
