@@ -1330,16 +1330,13 @@ with right:
 
 left, right = st.columns([1.05, 1], gap="large")
 
- with left:
-     
+with left:
     st.image(
         "coil.png",
         use_container_width=True
     )
 
-
 with right:
-
     st.html("""
     <div class="project">
 
