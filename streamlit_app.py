@@ -1330,27 +1330,13 @@ with right:
 
 left, right = st.columns([1.05, 1], gap="large")
 
-with left:
+ with left:
+     
+    st.image(
+        "coil.png",
+        use_container_width=True
+    )
 
-    st.html("""
-    <div class="project-visual coil">
-
-        <div>
-
-            <div class="visual-label">
-                INTERNATIONAL RESEARCH
-            </div>
-
-            <div class="visual-title">
-                What does<br>
-                <em>career-ready</em><br>
-                mean?
-            </div>
-
-        </div>
-
-    </div>
-    """)
 
 with right:
 
