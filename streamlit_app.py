@@ -1155,7 +1155,7 @@ left, right = st.columns([1.05, 1], gap="large")
 
 with left:
     st.image(
-        "absli_insightai.png",
+        "absli.png",
         use_container_width=True
     )
 
