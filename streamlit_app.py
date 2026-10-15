@@ -879,7 +879,7 @@ margin:25px auto 45px;
             font-size:36px;
             color:#773C48;
             line-height:1.1;
-        ">05</div>
+        ">06</div>
         <div style="
             font-family:'DM Sans',sans-serif;
             font-size:9px;
@@ -1112,7 +1112,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            02 / 05
+            02 / 06
         </div>
 
         <div class="project-name">
@@ -1145,6 +1145,92 @@ with right:
 
     st.link_button("VIEW PROJECT →", AGRAMI)
 
+# =====================================================
+# PROJECT 03 — ABSLI INSIGHTAI
+# =====================================================
+
+left, right = st.columns([1.05, 1], gap="large")
+
+with left:
+    st.markdown(
+        """
+        <div class="project-visual"
+             style="background:#f3eee8; padding:30px; border-radius:12px;
+                    min-height:315px; display:flex; flex-direction:column;
+                    justify-content:center;">
+
+            <div style="font-size:12px; letter-spacing:2px;
+                        color:#8b2635; margin-bottom:24px;">
+                 03 / 06
+            </div>
+
+            <div style="font-family:'Playfair Display',serif;
+                        font-size:34px; line-height:1.2;
+                        color:#3b2025;">
+                ABSLI<br>InsightAI
+            </div>
+
+            <div style="font-size:13px; letter-spacing:1px;
+                        margin-top:16px; color:#66565a;">
+                MARKETING COMMUNICATIONS DASHBOARD
+            </div>
+
+            <div style="margin-top:32px; border-top:1px solid #d8c9c2;
+                        padding-top:16px; font-size:12px; color:#66565a;">
+                SENTIMENT ANALYSIS &nbsp;·&nbsp;
+                CONSUMER INSIGHTS &nbsp;·&nbsp;
+                AI-ASSISTED STRATEGY
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with right:
+    st.markdown(
+        """
+        <div class="project">
+            <div class="project-number">03 / AI + MARKETING</div>
+
+            <div class="project-name">ABSLI InsightAI</div>
+
+            <div class="project-tag">
+                AI-Powered Marketing Communications Dashboard
+            </div>
+
+            <div class="project-description">
+                An AI-powered dashboard prototype exploring how social media
+                and competitor data can be transformed into meaningful
+                marketing insights. The concept brings together content
+                classification, sentiment analysis, consumer segmentation
+                and engagement analysis to support smarter marketing decisions.
+            </div>
+
+            <div class="project-role">
+                <strong>MY CONTRIBUTION</strong><br>
+                Conceptualised the dashboard workflow, structured the
+                marketing analytics modules and developed the prototype
+                using Lovable, with ChatGPT supporting prompt development.
+            </div>
+
+            <div class="project-role">
+                <strong>TOOLS</strong><br>
+                Lovable · ChatGPT
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+st.link_button(
+    "EXPLORE LIVE DASHBOARD ↗",
+    "https://marcom-insight-ai.lovable.app/",
+    use_container_width=False
+)
+
+
+
 
 # =========================================================
 # NYKAA
@@ -1164,7 +1250,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            03 / 05
+            04 / 06
         </div>
 
         <div class="project-name">
@@ -1217,7 +1303,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            04 / 05
+            05 / 06
         </div>
 
         <div class="project-name">
@@ -1286,7 +1372,7 @@ with right:
     <div class="project">
 
         <div class="project-number">
-            05 / 05
+            06 / 06
         </div>
 
         <div class="project-name">
