@@ -1159,46 +1159,35 @@ with left:
         use_container_width=True
     )
 
+
 with right:
-    st.markdown(
-        """
-        <div class="project">
-            <div class="project-number">03 / 06</div>
+    st.markdown('<div class="project-number">03 / 06</div>', unsafe_allow_html=True)
+    st.markdown("## ABSLI InsightAI")
+    st.caption("AI-Powered Marketing Communications Dashboard")
 
-            <div class="project-name">ABSLI InsightAI</div>
-
-            <div class="project-tag">
-                AI-Powered Marketing Communications Dashboard
-            </div>
-
-            <div class="project-description">
-                A dashboard prototype exploring how AI can simplify
-                social media and competitor analysis, understand audience
-                sentiment, identify consumer segments, and turn engagement
-                data into useful marketing insights.
-            </div>
-
-            <div class="project-role">
-                <strong>MY CONTRIBUTION</strong><br>
-                Conceptualised the dashboard workflow, structured the
-                marketing analytics modules, and developed the prototype
-                using Lovable, with ChatGPT supporting prompt development.
-            </div>
-
-            <div class="project-role">
-                <strong>TOOLS</strong><br>
-                Lovable · ChatGPT
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.write(
+        "A dashboard prototype exploring how AI can simplify social "
+        "media and competitor analysis, understand audience sentiment, "
+        "identify consumer segments, and turn engagement data into "
+        "useful marketing insights."
     )
+
+    st.markdown("**MY CONTRIBUTION**")
+    st.write(
+        "Conceptualised the dashboard workflow, structured the marketing "
+        "analytics modules, and developed the prototype using Lovable, "
+        "with ChatGPT supporting prompt development."
+    )
+
+    st.markdown("**TOOLS**")
+    st.write("Lovable · ChatGPT")
 
 st.link_button(
     "EXPLORE LIVE DASHBOARD ↗",
     "https://marcom-insight-ai.lovable.app/",
     use_container_width=False
 )
+
 
 
 # =====================================================
