@@ -1161,7 +1161,7 @@ with left:
 
             <div style="font-size:12px; letter-spacing:2px;
                         color:#8b2635; margin-bottom:24px;">
-                 03 / 06
+                 PROJECT 03 / AI + MARKETING
             </div>
 
             <div style="font-family:'Playfair Display',serif;
@@ -1191,7 +1191,7 @@ with right:
     st.markdown(
         """
         <div class="project">
-            <div class="project-number">03 / AI + MARKETING</div>
+           <div class="project-number">03 / 06</div>
 
             <div class="project-name">ABSLI InsightAI</div>
 
